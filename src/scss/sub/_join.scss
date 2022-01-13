@@ -1,0 +1,85 @@
+#join{
+    width: 100%; height: 780px;
+    background-color: rgba(243,242,237,1);
+
+    .inner {
+        width: 1200px; margin: 0 auto; position: relative;
+
+        .pic {
+            position: absolute; left: 603px; top: 48px;
+            width: 1612px; height: 668px; opacity: 0.05;
+            background-image: url(/public/img/began_bg.png);
+            background-size: cover; background-repeat: no-repeat;
+        }
+        h2 {
+            width: 311px; letter-spacing: 1px;
+            position: absolute; top: 105px; left: 146px; color: rgba(88,91,73,1);
+            font: bold 40px/1.5 "Noto Serif Display"; text-align: left;
+        }
+        .p1{
+            position: absolute; top: 227px; left: 149px; margin-top: 20px;
+            width: 330px; font: normal 16px/1.8 "Baloo 2";
+            font-weight: 300; text-align: left; letter-spacing: 0.5px;
+        }
+        .message
+        ,.phone {
+            margin-top: 30px; color: #000; font: normal 14px "Baloo 2";
+            font-weight: 300; 
+            i{
+                font-size: 23px; transform: translateY(5px);
+                color: rgba(88,91,73,1); margin-right: 20px;
+            }
+        }
+        .message{position: absolute; top: 328px; left: 149px; }
+        .phone {position: absolute; top: 376px; left: 149px; }
+        span {
+            position: absolute; top: 470px; left: 146px;
+            width: 303px; font: normal 14px/1.2 "Baloo"; letter-spacing: 1px;
+            color: rgba(179,163,149,1); text-align: left;
+        }
+        .p2 {
+            position: absolute; top: 513px; left: 148px;
+            width: 280px; font: normal 12px/1.8 "Baloo 2";
+            text-align: left; letter-spacing: 0.8px;
+        }
+        .wrap {
+
+            a {
+                position: absolute; height: 41px; left: 660px;
+                top: 650px; width: 240px; background-color: rgba(171,142,115,1);
+                border-color: rgba(171,142,115,1); color: #fff; 
+                font: normal 13px/41px "Baloo 2"; font-weight: 300; 
+                letter-spacing: 1.2px; text-align: center; 
+            }
+            input {
+                width: 550px; height: 41px; background-color: #fff; border: none; outline: none;
+                font: normal 13px/41px "Baloo 2"; padding: 10px; color: #000; font-weight: 300;
+                position: absolute; right: 105px;
+
+                &:nth-of-type(1) {
+                    top: 101px;
+                }
+                &:nth-of-type(2) {
+                    top: 162px;
+                }
+                &:nth-of-type(3) {
+                    top: 223px;
+                }
+                &:nth-of-type(4) {
+                    top: 284px;
+                }
+                &:nth-of-type(5) {
+                    top: 345px;
+                }
+            }
+            textarea {
+                position: absolute;
+                top: 406px; right: 105px; height: 194px;
+                width: 550px; background-color: #fff; border: none; outline: none;
+                font: normal 13px/41px "Baloo 2"; padding: 10px; color: #000; font-weight: 300;
+                
+            }
+        }
+    }
+    
+}

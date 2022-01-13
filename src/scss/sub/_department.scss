@@ -1,0 +1,115 @@
+#department {
+    width: 100%; background-color: rgba(243,242,237,1);
+    
+    .inner {
+        width: 1200px; margin: 0 auto; 
+        .title {
+            width: 100%; height: 500px; position: relative;
+            
+            h1 {
+                color: rgba(88,91,73,1); font: bold 60px/1.1 "Noto Serif Display";
+                letter-spacing: 1px; text-align: center;
+                padding-top: 82px; 
+            }
+            span{
+                display: block; margin-top: 20px;
+                font: normal 20px/1.8 "Baloo 2"; letter-spacing: 1.2pxs;
+                text-align: center; font-weight: 300;
+            }
+            .line {
+                margin: 50px auto;
+                width: 713px; height: 1px; background-color: rgba(88,91,73,1);
+            }
+            .titPic {
+                padding: 0 10px;
+                width: 72px; height: 51px; margin: 0 auto; background-color: rgba(243,242,237,1);
+                position: absolute; top: 228px; left: 50%; transform: translateX(-50%);
+                img {width: 100%; height: 100%;}
+            }
+            p {
+                display: block; width: 761px; font: normal 14px/2.3 "Baloo 2";
+                font-weight: 300; text-align: center; color: rgba(13,13,13,1);
+                letter-spacing: 0.5px; margin: 0 auto;
+            }
+
+        }
+
+        .contents {
+            width: 100%; height: 1300px; position: relative;
+            .wrap {
+                position: relative; 
+                .furniture1 {
+                    position: absolute; left: 0; top: 550px;
+                    width: 550px; height: 388px;
+
+                    img {width: 100%; height: 100%;}
+                }
+                .p1 {
+                    width: 460px; position: absolute; right: 110px; top: 550px;
+                    font: normal 18px/1.8 "Baloo 2"; font-weight: 300;
+                    color: rgba(55,55,55,1); text-align: left; 
+                }
+                .verticalLine {
+                    width: 1px; height: 357px; background-color: rgba(88, 91, 73, 0.589);
+                    position: absolute; left: 630px; top: 720px;
+                }
+                .furniture2 {
+                    position: absolute; right: 0; top: 788px;
+                    width: 450px; height: 431px;
+
+                    img {width: 100%; height: 100%;}
+                }
+                .p2 {
+                    width: 460px; position: absolute; left: 90px; top: 1008px;
+                    text-align: justify; color:  rgba(55,55,55,1); font: normal 17px/2.2 "Baloo 2";
+                    font-weight: 300; 
+                }
+
+            }
+            .departmentBg {
+                background-image: url(/public/img/began_bg.png);
+                background-repeat: no-repeat; opacity: 0.05; 
+                background-size: cover; width: 500px; height: 300px;
+                position: absolute; top: -20%; left: -100px;
+            }
+            .teamInfo {
+                width: 100%; font: bold 40px/1.8 "Noto Serif Display";
+                color: rgba(88,91,73,1); text-align: right;
+                position: absolute; top: 0%; letter-spacing: 1px;
+            }
+            .peoples {
+                width: 100%; display: flex; position: absolute;
+                top: 8%;
+                justify-content: space-between;
+
+
+                .human1
+                ,.human2
+                ,.human3
+                ,.human4 {
+                    width: 20%; height: 250px; margin-right: 10px; position: relative;
+                    img {
+                        border-radius: 10px; transition: 0.5s;
+                        width: 100%; height: 100%; filter:sepia(40%); margin-top: -250px; 
+                    }
+                    span {
+                        font: normal 18px "Baloo 2"; font-weight: 300; position: absolute; color: #fff;
+                        top: 50%; left: 50%; transform: translate(-50%,-50%); padding: 10px; background-color: rgba(192, 140, 77, 0.822);
+                        display: none; border: 1px solid #fff ; width: 70%; text-align: center;
+                        border-radius: 20px; transition: 0.5s;
+                    }
+
+                    &:hover {
+                        img {filter:saturate(0.5);  }
+                        span {display: block;  }
+                    }
+
+                    &::before {
+                        content: ""; margin: -10px 10px; display: inline-block;
+                        width: 100%; height: 100%; background-color:#b2b2a2; border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
