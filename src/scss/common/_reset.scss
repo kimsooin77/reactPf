@@ -10,3 +10,17 @@ a {
 body {
     overflow-x: hidden;
 }
+table {
+    border-collapse: collapse;
+    border: none;
+
+    th,td {
+        border: none;
+    }
+}
+fieldset {
+    border: none;
+}
+.h {
+    position: absolute; top: -9999px; opacity: 0;
+}

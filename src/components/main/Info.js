@@ -1,24 +1,51 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import Anime from '../class/anime.js';
 
 function Info(){
   const arr = ['slider1','slider2','slider3','slider4','slider5','slider6','slider7','slider8','slider9','slider10','slider11'];
   const path = process.env.PUBLIC_URL;
-  const deg = null;
   let [names,setNames] = useState(arr);
+  const [selected,setSelected] = useState(0);
+  const totalSlide = arr.length - 3;
+  const slideRef = useRef(null);
+  const nextSlide = e => {
+      e.preventDefault();
+
+      if(selected >= totalSlide) {
+          setSelected(0);
+      }else {
+          setSelected(selected + 1);
+      }
+  }
+  const prevSlide = e => {
+    e.preventDefault();
+
+    if(selected === 0) {
+      setSelected(totalSlide);
+    }else {
+      setSelected(selected - 1)
+    }
+  }
+
+    useEffect(() => {
+      slideRef.current.style.transition = `all 0.5s ease-in-out`;
+      slideRef.current.style.transform = `
+        translateX(-${selected}0%)
+      `
+    },[selected]);
 
     return (
       <section id="third">
         <div className="inner">
           <div className="slider">
-            <ul className="pics">
+            <ul ref={slideRef} className="pics">
               {
                 names.map((data,index) => {
-                  let style = {transform : `translateX(350)px`}
-                  let imgSrc = `${path}/img/${data}.jpg`
-
+                  let imgSrc = `${path}/img/${data}.jpg`;
+                  
                   return(
-                    <li key={index} style={style}>
-                      <div className="pic">
+                    <li  className="selected" key={index} >
+                      <div  className="pic">
                         <img src={imgSrc} />
                       </div>
                     </li>
@@ -27,8 +54,8 @@ function Info(){
               }
             </ul>
           </div>
-          <a href="#" className="prevBtn">←</a>
-          <a href="#" className="nextBtn">→</a>
+          <a href="#" className="prevBtn" onClick={prevSlide}>←</a>
+          <a href="#" className="nextBtn" onClick={nextSlide} >→</a>
           <h1>High Quality. Unique Interiors<br />And Furniture At A Fair Price</h1>
           <div className="line1"></div>
           <div className="line2"></div>

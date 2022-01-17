@@ -1,10 +1,52 @@
 .youtube {
-  background-color: #f7f6ec; 
+  background-color: #f7f6ec; padding-top: 0;
+
+  .topPic {
+    background: url(/public/img/slider4.jpg) bottom; width: 100%;
+    height: 60vh; background-repeat: no-repeat; background-attachment: fixed;
+    background-size: cover;
+
+    p {
+        position: absolute; font: bold 60px/1.8 "DM Serif Display"; letter-spacing: 3px;
+        color: #fff; top: 32%; left: 50%; transform: translateX(-50%);
+        
+    }
+    span {
+        position: absolute; font: normal 25px "Cardo";
+        color: #FFF;top: 45%; left: 25%;
+    }
+
+    aside{
+        width: 800px; height: 100px; position: absolute; top: 40%; left: 50%; transform: translateX(-50%);
+        overflow: hidden; z-index: 3;
+
+        .top {
+            width: 33%;  height: 1px; background: #fff;
+            position: absolute; top: 0; right: 0px;
+        }
+        .right {
+            width: 1px; height: 100%; background: #fff;
+            position: absolute; top: 0; right: 0;
+        }
+        .bottom {
+            width: 100%; height: 1px; background: #fff;
+            position: absolute; bottom: 0; right: 0;
+        }
+        .left {
+            width: 1px; height: 100%; background: #fff;
+            position: absolute; bottom: 0; left: 0;
+        }
+        .topLeft {
+            width: 33%;
+            height: 1px; background: #fff; position: absolute; top: 0; left: 0;
+        }
+    }
+  }
     .inner {
-       
-        max-width: 1200px; position: relative; 
+       padding-top: 0; height: 100%;
+        max-width: 1200px; position: relative; transform: translateY(70px);
         >h1 {
-          transform: translateY(-10px); margin-left: 30px; margin-bottom: 30px;
+          transform: translateY(40px); margin-left: 30px; margin-bottom: 30px;
 
           &::after {
             content: "";
@@ -25,22 +67,33 @@
         .logoBg {
           width: 200px;
           height: 100px;
-          top: -30px; right: 0;
+          top: 20px; right: 0;
           position: absolute;
         }
         
       .frame {
+        height: 2500px;
         &::after {
           content: ""; display: block; clear: both;        
         }
   
         article {
-          width: 100%; height: 450px; float: left; margin-bottom: 32px;
-          padding: 32px; overflow: hidden; border-bottom: 1px solid #c9c8bf;
-          box-sizing: border-box;
+          width: 100%; height: 450px; float: left; 
+          padding-left: 30px; overflow: hidden; box-sizing: border-box; position: relative;
+          margin: 20px 0;
+
+          &::after {
+            content: "";
+            display: block; width: 100%; height: 1px;
+            background: #c9c8bf; position: absolute; bottom: 0; left: 0;
+            
+          }    
+          &:last-child::after {
+            display: none;
+          }      
   
           .inner {
-             align-content: space-between; display: flex; width: 100%; 
+             align-content: space-between; display: flex; width: 100%; height: 100%;
   
             .pic {
               width: 49%; height: 327px;  cursor: pointer; object-fit: cover;
@@ -78,7 +131,7 @@
                 display: block; color: #fff; margin-top: 40px; margin-left: 270px;
 
                 &:hover {
-                    background-color: rgba(88,91,73,1);;
+                    background-color: rgba(88,91,73,1);
                 }
               }
             }          

@@ -1,12 +1,55 @@
+
 #community {
-    width: 100%; margin: 0px auto;
+    width: 100%; margin: 0px auto; padding-top: 0;
+
+    .topPic {
+        background: url(/public/img/slider11.jpg) center; width: 100%;
+        height: 60vh; background-repeat: no-repeat; background-attachment: fixed;
+        background-size: cover;
+
+        p {
+            position: absolute; font: bold 60px/1.8 "DM Serif Display"; letter-spacing: 3px;
+            color: #fff; top: 30%; left: 60px; transform: translateY(-50%);
+            
+        }
+        span {
+            position: absolute; font: normal 25px "Cardo";
+            color: #FFF;top: 37%; left: 60px;
+        }
+
+        aside{
+            width: 800px; height: 100px; position: absolute; top: 31%; left: 30px;
+            overflow: hidden; z-index: 3;
+
+            .top {
+                width: 60%;  height: 1px; background: #fff;
+                position: absolute; top: 0; left: 400px;
+            }
+            .right {
+                width: 1px; height: 100%; background: #fff;
+                position: absolute; top: 0; right: 0;
+            }
+            .bottom {
+                width: 100%; height: 1px; background: #fff;
+                position: absolute; bottom: 0; right: 0;
+            }
+            .left {
+                width: 1px; height: 100%; background: #fff;
+                position: absolute; bottom: 0; left: 0;
+            }
+            .topLeft {
+                width: 20px;
+                height: 1px; background: #fff; position: absolute; top: 0; left: 0;
+            }
+        }
+    }
     .inner {
-        width: 1180px; height: 1000px; 
+        width: 1180px; height: 1100px; 
         position: relative; margin: 0 auto;
         
         >h1 {
             position: absolute;
-            top: 0px;
+            top: 100px;
             left: 0px;
             
             a {
@@ -15,12 +58,12 @@
             }
         }
         >p {
-            margin-top: 30px; position: absolute; top: 50px; left: 0px;
+            margin-top: 30px; position: absolute; top: 150px; left: 0px;
             width: 400px; font: normal 16px/1.8 "Baloo 2";
             font-weight: 300; text-align: left; letter-spacing: 0.5px;
         }
         .thead {
-            width: 90%; position: absolute; top: 190px; left: 0px;
+            width: 90%; position: absolute; top: 290px; left: 0px;
             background: #f2efeb;
             padding: 17px 0;
 
@@ -36,7 +79,7 @@
             }
         }
         article {
-            float: left;  transform: translateY(250px);
+            float: left;  transform: translateY(350px);
             width: 90%; height: 50px;
             padding: 10px;
             border-bottom: 1px solid #ddd;

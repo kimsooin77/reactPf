@@ -1,7 +1,14 @@
 import axios from "axios";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useRef} from "react";
 
 function Youtube() {
+    const top = useRef(null);
+    const right = useRef(null);
+    const bottom = useRef(null);
+    const left = useRef(null);
+    const pop = useRef(null);
+    const topLeft = useRef(null);
+
     const path = process.env.PUBLIC_URL;
     const logoSrc = `${path}/img/began_bg.png`;
 
@@ -25,6 +32,18 @@ function Youtube() {
 
     return(
         <main className="youtube">
+            <div className="topPic">
+            <aside ref={pop}>
+                    <div className="top" ref={top}></div>
+                    <div className="right" ref={right}></div>
+                    <div className="bottom" ref={bottom}></div>
+                    <div className="left" ref={left}></div>
+                    <div className="topLeft" ref={topLeft}></div>
+                </aside>
+                        
+                <p>Youtube</p>
+                <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, doloribus!</span>
+            </div>
             <div className="inner">
                 <h1><a href="#">Youtube</a></h1>
                 <img className="logoBg" src={logoSrc} />

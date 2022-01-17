@@ -1,12 +1,54 @@
 #join{
-    width: 100%; height: 780px;
+    width: 100%; height: 1280px;
     background-color: rgba(243,242,237,1);
 
+    .topPic {
+        background: url(/public/img/slider7.jpg) bottom; width: 100%;
+        height: 60vh; background-repeat: no-repeat; background-attachment: fixed;
+        background-size: cover;
+
+        p {
+            position: absolute; font: bold 60px/1.8 "DM Serif Display"; letter-spacing: 3px;
+            color: #fff; top: 32%; left: 50%; transform: translateX(-50%);
+            
+        }
+        span {
+            position: absolute; font: normal 25px "Cardo";
+            color: #FFF;top: 45%; left: 25%;
+        }
+    
+        aside{
+            width: 800px; height: 100px; position: absolute; top: 40%; left: 50%; transform: translateX(-50%);
+            overflow: hidden; z-index: 3;
+    
+            .top {
+                width: 37%;  height: 1px; background: #fff;
+                position: absolute; top: 0; right: 0px;
+            }
+            .right {
+                width: 1px; height: 100%; background: #fff;
+                position: absolute; top: 0; right: 0;
+            }
+            .bottom {
+                width: 100%; height: 1px; background: #fff;
+                position: absolute; bottom: 0; right: 0;
+            }
+            .left {
+                width: 1px; height: 100%; background: #fff;
+                position: absolute; bottom: 0; left: 0;
+            }
+            .topLeft {
+                width: 37%;
+                height: 1px; background: #fff; position: absolute; top: 0; left: 0;
+            }
+        }
+      }
+
     .inner {
-        width: 1200px; margin: 0 auto; position: relative;
+        width: 1200px; margin: 20px auto; position: relative;
 
         .pic {
-            position: absolute; left: 603px; top: 48px;
+            position: absolute; left: 603px; top: 230px;
             width: 1612px; height: 668px; opacity: 0.05;
             background-image: url(/public/img/began_bg.png);
             background-size: cover; background-repeat: no-repeat;
@@ -32,7 +74,7 @@
         }
         .message{position: absolute; top: 328px; left: 149px; }
         .phone {position: absolute; top: 376px; left: 149px; }
-        span {
+        >span {
             position: absolute; top: 470px; left: 146px;
             width: 303px; font: normal 14px/1.2 "Baloo"; letter-spacing: 1px;
             color: rgba(179,163,149,1); text-align: left;
@@ -42,44 +84,63 @@
             width: 280px; font: normal 12px/1.8 "Baloo 2";
             text-align: left; letter-spacing: 0.8px;
         }
-        .wrap {
+        form {
+            width: 55%; position: absolute; right: 0;
+            top: 105px; 
 
-            a {
-                position: absolute; height: 41px; left: 660px;
-                top: 650px; width: 240px; background-color: rgba(171,142,115,1);
-                border-color: rgba(171,142,115,1); color: #fff; 
-                font: normal 13px/41px "Baloo 2"; font-weight: 300; 
-                letter-spacing: 1.2px; text-align: center; 
-            }
-            input {
-                width: 550px; height: 41px; background-color: #fff; border: none; outline: none;
-                font: normal 13px/41px "Baloo 2"; padding: 10px; color: #000; font-weight: 300;
-                position: absolute; right: 105px;
+            table {
+                width: 100%;
+                th {
+                    text-indent: -9999px; opacity: 0;
 
-                &:nth-of-type(1) {
-                    top: 101px;
+                    &:last-child {
+                        text-indent: 0; opacity: 1;
+                    }
+                    input[type=reset], input[type=submit] {
+                        height: 41px; width: 140px; background-color: rgba(171,142,115,1);
+                        border-color: rgba(171,142,115,1); color: #fff; cursor: pointer;
+                        font: normal 13px/39px "Baloo 2"; font-weight: 300; 
+                        letter-spacing: 1.2px; text-align: center; margin: 35px 25px;
+                        transition: 0.5s; transform: translateX(-15px);
+
+                        &:hover {
+                            background-color: rgba(179,163,149,1);
+                            border-color: rgba(179,163,149,1);
+                        }
+                    }
                 }
-                &:nth-of-type(2) {
-                    top: 162px;
-                }
-                &:nth-of-type(3) {
-                    top: 223px;
-                }
-                &:nth-of-type(4) {
-                    top: 284px;
-                }
-                &:nth-of-type(5) {
-                    top: 345px;
+                td {
+                    
+                    input[type=text], input[type=password], input[type=email] {
+                        width: 90%; height: 41px; background-color: #fff; border: none; outline: none;
+                        font: normal 13px/41px "Baloo 2"; padding: 10px; color: #000; font-weight: 300;
+                        margin-bottom: 15px;
+                    }
+                    input[type=checkbox], input[type=radio] {
+                        margin-right: 55px; 
+                    }
+                    label {
+                        font: normal 14px/30px "Baloo 2"; margin-right: 7px;
+                        margin-left: 10px;
+                    }
+                    select {
+                        width: 90%; font: normal 13px/21px "Baloo 2"; padding: 10px; color: #000; font-weight: 300;
+                         outline: none; border: none; margin-bottom: 15px;
+                    }
+                    textarea {
+                        height: 194px;  width: 90%;  border: none; outline: none; margin-bottom: 15px;
+                        font: normal 13px/21px "Baloo 2"; padding: 10px;  font-weight: 300;
+                    }
+
+                    .err {
+                        display: block; width: 90%; text-align: left;
+                        font: 11px/1 "Baloo 2"; color: red;margin-left: 10px;transform: translateY(-7px);
+                    }
                 }
             }
-            textarea {
-                position: absolute;
-                top: 406px; right: 105px; height: 194px;
-                width: 550px; background-color: #fff; border: none; outline: none;
-                font: normal 13px/41px "Baloo 2"; padding: 10px; color: #000; font-weight: 300;
-                
-            }
+            
         }
+        
     }
     
 }

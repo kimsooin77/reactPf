@@ -12,6 +12,13 @@ const masonryOptions = {
 }
 
 function Gallery() {
+    const top = useRef(null);
+    const right = useRef(null);
+    const bottom = useRef(null);
+    const left = useRef(null);
+    const pop = useRef(null);
+    const topLeft = useRef(null);
+
     const path = process.env.PUBLIC_URL;
     const titPic = `${path}/img/titPic.png`;
 
@@ -35,6 +42,18 @@ function Gallery() {
 
     return(
         <section className="gallery">
+            <div className="topPic">
+            <aside ref={pop}>
+                    <div className="top" ref={top}></div>
+                    <div className="right" ref={right}></div>
+                    <div className="bottom" ref={bottom}></div>
+                    <div className="left" ref={left}></div>
+                    <div className="topLeft" ref={topLeft}></div>
+                </aside>
+                        
+                <p>Gallery</p>
+                <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, doloribus!</span>
+            </div>
             <div className="inner">
                 <h1><a href="#">Gallery</a></h1>
                 <span>We're so happy you have landed here! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, mollitia.</span>                

@@ -1,0 +1,92 @@
+.subHead {
+    width: 100%;
+    .inner{
+        width: 100%; background-color: rgba(243,242,237,1);
+        height: 100px; 
+
+        .wrap {
+            width: 100%; position: relative;
+            h1 {
+                width: 140px; height: 80px; position: absolute;
+                top: 10px; left: 70px;
+
+                img {width: 100%; height: 100%;}
+            }
+
+            #gnb {
+                display: flex;  width: 60%; position: absolute;
+                right: 100px; top: 15px; justify-content: space-between;
+
+                li {
+                    padding: 20px;
+
+                    a {color: #000; font: normal 20px "Baloo 2";}
+                }
+            }
+
+            >a {
+                display: none; position: absolute; top: 30px; right: 50px;
+                width: 30px; height: 30px;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100%; height: 2px; background:#000;
+                    position: absolute; top: 0; left: 0;
+                  }
+                  &::after {
+                    content: ""; display: block; width: 100%;
+                    height: 2px; background: #000; position: absolute;
+                    bottom: 0; left: 0; 
+                  }
+
+                span {
+                    display: block; text-indent: -99999px; position: absolute; top: 50%;
+                    left: 0;
+                    width: 100%; height: 1px; background: #000;
+                }
+
+            }
+
+            
+        }
+
+        #gnbMo{
+            display: none;
+        }
+
+    }
+}
+
+@media screen and (max-width : 950px) {
+    .subHead {
+        width: 100%;
+        .inner{
+            width: 100%; background-color: rgba(243,242,237,1);
+            height: 150px; 
+    
+            .wrap {
+                width: 100%; position: relative;
+                h1 {
+                    width: 140px; height: 80px; position: absolute;
+                    top: 30px; left: 50px;
+    
+                    img {width: 100%; height: 100%;}
+                }
+    
+                #gnb {
+                    display: none;  
+                }
+    
+                >a {
+                    display: block;  top: 50px;
+                }
+            }
+    
+            #gnbMo{
+                display: none;
+            }
+    
+        }
+    }
+}

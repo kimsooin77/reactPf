@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Noto+Serif+Display:ital,wght@0,300;1,300&family=Rhodium+Libre&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Cardo&family=DM+Serif+Display&family=Noto+Serif+Display:ital,wght@0,300;1,300&family=Rhodium+Libre&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -13,6 +13,113 @@ a {
 body {
   overflow-x: hidden; }
 
+table {
+  border-collapse: collapse;
+  border: none; }
+  table th, table td {
+    border: none; }
+
+fieldset {
+  border: none; }
+
+.h {
+  position: absolute;
+  top: -9999px;
+  opacity: 0; }
+
+.subHead {
+  width: 100%; }
+  .subHead .inner {
+    width: 100%;
+    background-color: #f3f2ed;
+    height: 100px; }
+    .subHead .inner .wrap {
+      width: 100%;
+      position: relative; }
+      .subHead .inner .wrap h1 {
+        width: 140px;
+        height: 80px;
+        position: absolute;
+        top: 10px;
+        left: 70px; }
+        .subHead .inner .wrap h1 img {
+          width: 100%;
+          height: 100%; }
+      .subHead .inner .wrap #gnb {
+        display: flex;
+        width: 60%;
+        position: absolute;
+        right: 100px;
+        top: 15px;
+        justify-content: space-between; }
+        .subHead .inner .wrap #gnb li {
+          padding: 20px; }
+          .subHead .inner .wrap #gnb li a {
+            color: #000;
+            font: normal 20px "Baloo 2"; }
+      .subHead .inner .wrap > a {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        width: 30px;
+        height: 30px; }
+        .subHead .inner .wrap > a::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: #000;
+          position: absolute;
+          top: 0;
+          left: 0; }
+        .subHead .inner .wrap > a::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: #000;
+          position: absolute;
+          bottom: 0;
+          left: 0; }
+        .subHead .inner .wrap > a span {
+          display: block;
+          text-indent: -99999px;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: #000; }
+    .subHead .inner #gnbMo {
+      display: none; }
+
+@media screen and (max-width: 950px) {
+  .subHead {
+    width: 100%; }
+    .subHead .inner {
+      width: 100%;
+      background-color: #f3f2ed;
+      height: 150px; }
+      .subHead .inner .wrap {
+        width: 100%;
+        position: relative; }
+        .subHead .inner .wrap h1 {
+          width: 140px;
+          height: 80px;
+          position: absolute;
+          top: 30px;
+          left: 50px; }
+          .subHead .inner .wrap h1 img {
+            width: 100%;
+            height: 100%; }
+        .subHead .inner .wrap #gnb {
+          display: none; }
+        .subHead .inner .wrap > a {
+          display: block;
+          top: 50px; }
+      .subHead .inner #gnbMo {
+        display: none; } }
 header {
   width: 100%;
   background-color: #000; }
@@ -107,7 +214,8 @@ header {
       position: absolute;
       top: 0px;
       text-align: center;
-      right: -100%; }
+      right: -100%;
+      display: block; }
       header > .inner #gnbMo li {
         width: 100%;
         padding: 15px;
@@ -123,6 +231,18 @@ header {
         header > .inner #gnbMo li:hover {
           background-color: #585b49; }
           header > .inner #gnbMo li:hover:nth-of-type(1) {
+            background-color: #b2b2a2; }
+        header > .inner #gnbMo li:nth-of-type(8) {
+          width: 30px;
+          height: 30px;
+          padding: 0;
+          position: absolute;
+          top: 30px;
+          right: 30px; }
+          header > .inner #gnbMo li:nth-of-type(8) a {
+            color: #fff;
+            cursor: pointer; }
+          header > .inner #gnbMo li:nth-of-type(8):hover {
             background-color: #b2b2a2; }
 
 main {
@@ -433,7 +553,9 @@ footer {
         display: block; }
       header > .inner .wrap #gnb {
         display: none; }
-    header > .inner #gnbMo {
+    header > .inner .yes {
+      display: none; }
+    header > .inner .no {
       right: 0%; } }
 #second {
   display: block;
@@ -604,17 +726,25 @@ footer {
     position: relative; }
     #third .inner .slider {
       width: 1520px;
-      height: 1100px; }
+      height: 1100px;
+      padding-top: 50px; }
       #third .inner .slider .pics {
-        width: 300%;
-        height: 100%; }
+        width: 5000px;
+        height: 500px;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between; }
         #third .inner .slider .pics li {
-          float: left;
-          margin-right: 30px; }
-          #third .inner .slider .pics li .pic {
-            width: 375px;
-            height: 500px; }
-            #third .inner .slider .pics li .pic img {
+          width: 33.33%;
+          height: 100%;
+          margin: 0 30px; }
+          #third .inner .slider .pics li .pic img {
+            width: 100%;
+            height: 100%; }
+          #third .inner .slider .pics li .selected {
+            width: 35%;
+            height: 120%; }
+            #third .inner .slider .pics li .selected img {
               width: 100%;
               height: 100%; }
     #third .inner .prevBtn
@@ -1148,6 +1278,70 @@ footer {
         transform: translateX(-50%); } }
 .gallery {
   background-color: #f3f2ed; }
+  .gallery .topPic {
+    background: url(/public/img/slider3.jpg) bottom;
+    width: 100%;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; }
+    .gallery .topPic p {
+      position: absolute;
+      font: bold 60px/1.8 "DM Serif Display";
+      letter-spacing: 3px;
+      color: #fff;
+      top: 47%;
+      right: 5%;
+      transform: translateY(-50%); }
+    .gallery .topPic span {
+      position: absolute;
+      font: normal 25px "Cardo";
+      color: #FFF;
+      top: 54%;
+      left: 47%; }
+    .gallery .topPic aside {
+      width: 800px;
+      height: 100px;
+      position: absolute;
+      top: 48%;
+      right: 30px;
+      overflow: hidden;
+      z-index: 3; }
+      .gallery .topPic aside .top {
+        width: 30px;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: 0px; }
+      .gallery .topPic aside .right {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: 0; }
+      .gallery .topPic aside .bottom {
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        right: 0; }
+      .gallery .topPic aside .left {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+      .gallery .topPic aside .topLeft {
+        width: 65%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 0; }
   .gallery .inner {
     position: relative;
     padding: 40px 0;
@@ -1254,15 +1448,80 @@ footer {
     width: 100% !important; } }
 #community {
   width: 100%;
-  margin: 0px auto; }
+  margin: 0px auto;
+  padding-top: 0; }
+  #community .topPic {
+    background: url(/public/img/slider11.jpg) center;
+    width: 100%;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; }
+    #community .topPic p {
+      position: absolute;
+      font: bold 60px/1.8 "DM Serif Display";
+      letter-spacing: 3px;
+      color: #fff;
+      top: 30%;
+      left: 60px;
+      transform: translateY(-50%); }
+    #community .topPic span {
+      position: absolute;
+      font: normal 25px "Cardo";
+      color: #FFF;
+      top: 37%;
+      left: 60px; }
+    #community .topPic aside {
+      width: 800px;
+      height: 100px;
+      position: absolute;
+      top: 31%;
+      left: 30px;
+      overflow: hidden;
+      z-index: 3; }
+      #community .topPic aside .top {
+        width: 60%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 400px; }
+      #community .topPic aside .right {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: 0; }
+      #community .topPic aside .bottom {
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        right: 0; }
+      #community .topPic aside .left {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+      #community .topPic aside .topLeft {
+        width: 20px;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 0; }
   #community .inner {
     width: 1180px;
-    height: 1000px;
+    height: 1100px;
     position: relative;
     margin: 0 auto; }
     #community .inner > h1 {
       position: absolute;
-      top: 0px;
+      top: 100px;
       left: 0px; }
       #community .inner > h1 a {
         font: bold 40px/1.8 "Noto Serif Display";
@@ -1271,7 +1530,7 @@ footer {
     #community .inner > p {
       margin-top: 30px;
       position: absolute;
-      top: 50px;
+      top: 150px;
       left: 0px;
       width: 400px;
       font: normal 16px/1.8 "Baloo 2";
@@ -1281,7 +1540,7 @@ footer {
     #community .inner .thead {
       width: 90%;
       position: absolute;
-      top: 190px;
+      top: 290px;
       left: 0px;
       background: #f2efeb;
       padding: 17px 0; }
@@ -1297,7 +1556,7 @@ footer {
         font-size: 15px; }
     #community .inner article {
       float: left;
-      transform: translateY(250px);
+      transform: translateY(350px);
       width: 90%;
       height: 50px;
       padding: 10px;
@@ -1378,12 +1637,81 @@ footer {
           background: #51402f; }
 
 .youtube {
-  background-color: #f7f6ec; }
+  background-color: #f7f6ec;
+  padding-top: 0; }
+  .youtube .topPic {
+    background: url(/public/img/slider4.jpg) bottom;
+    width: 100%;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; }
+    .youtube .topPic p {
+      position: absolute;
+      font: bold 60px/1.8 "DM Serif Display";
+      letter-spacing: 3px;
+      color: #fff;
+      top: 32%;
+      left: 50%;
+      transform: translateX(-50%); }
+    .youtube .topPic span {
+      position: absolute;
+      font: normal 25px "Cardo";
+      color: #FFF;
+      top: 45%;
+      left: 25%; }
+    .youtube .topPic aside {
+      width: 800px;
+      height: 100px;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      overflow: hidden;
+      z-index: 3; }
+      .youtube .topPic aside .top {
+        width: 33%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: 0px; }
+      .youtube .topPic aside .right {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: 0; }
+      .youtube .topPic aside .bottom {
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        right: 0; }
+      .youtube .topPic aside .left {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+      .youtube .topPic aside .topLeft {
+        width: 33%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 0; }
   .youtube .inner {
+    padding-top: 0;
+    height: 100%;
     max-width: 1200px;
-    position: relative; }
+    position: relative;
+    transform: translateY(70px); }
     .youtube .inner > h1 {
-      transform: translateY(-10px);
+      transform: translateY(40px);
       margin-left: 30px;
       margin-bottom: 30px; }
       .youtube .inner > h1::after {
@@ -1400,79 +1728,93 @@ footer {
     .youtube .inner .logoBg {
       width: 200px;
       height: 100px;
-      top: -30px;
+      top: 20px;
       right: 0;
       position: absolute; }
-    .youtube .inner .frame::after {
-      content: "";
-      display: block;
-      clear: both; }
-    .youtube .inner .frame article {
-      width: 100%;
-      height: 450px;
-      float: left;
-      margin-bottom: 32px;
-      padding: 32px;
-      overflow: hidden;
-      border-bottom: 1px solid #c9c8bf;
-      box-sizing: border-box; }
-      .youtube .inner .frame article .inner {
-        align-content: space-between;
-        display: flex;
-        width: 100%; }
-        .youtube .inner .frame article .inner .pic {
-          width: 49%;
-          height: 327px;
-          cursor: pointer;
-          object-fit: cover;
-          overflow: hidden; }
-          .youtube .inner .frame article .inner .pic img {
-            width: 100%;
-            height: 100%;
-            transition: 0.5s;
-            position: relative;
-            box-sizing: border-box; }
-            .youtube .inner .frame article .inner .pic img:hover {
-              transform: scale(1.1);
-              filter: grayscale(70%); }
-        .youtube .inner .frame article .inner .txt {
-          box-sizing: border-box;
-          margin-left: 60px;
-          padding: 30px;
-          width: 50%; }
-          .youtube .inner .frame article .inner .txt h2 {
-            font: bold 26px/1.2 "Noto Serif Display";
-            color: #585b49;
-            margin-bottom: 20px;
-            word-break: break-all;
-            width: auto;
-            letter-spacing: 0.5px; }
-          .youtube .inner .frame article .inner .txt span {
-            color: #93938f;
-            font: normal 16px "Baloo 2";
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transform: translateY(-10px);
-            display: block; }
-          .youtube .inner .frame article .inner .txt p {
-            font: normal 16px/1.8 "Baloo 2";
-            color: #6D6D65;
-            word-break: break-all;
-            margin-top: 30px;
-            letter-spacing: 1px; }
-          .youtube .inner .frame article .inner .txt a {
-            font: normal 13px/40px "Baloo 2";
-            width: 200px;
-            height: 40px;
-            text-align: center;
-            background-color: #b2b2a2;
-            transition: 0.5s;
-            display: block;
-            color: #fff;
-            margin-top: 40px;
-            margin-left: 270px; }
-            .youtube .inner .frame article .inner .txt a:hover {
-              background-color: #585b49; }
+    .youtube .inner .frame {
+      height: 2500px; }
+      .youtube .inner .frame::after {
+        content: "";
+        display: block;
+        clear: both; }
+      .youtube .inner .frame article {
+        width: 100%;
+        height: 450px;
+        float: left;
+        padding-left: 30px;
+        overflow: hidden;
+        box-sizing: border-box;
+        position: relative;
+        margin: 20px 0; }
+        .youtube .inner .frame article::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 1px;
+          background: #c9c8bf;
+          position: absolute;
+          bottom: 0;
+          left: 0; }
+        .youtube .inner .frame article:last-child::after {
+          display: none; }
+        .youtube .inner .frame article .inner {
+          align-content: space-between;
+          display: flex;
+          width: 100%;
+          height: 100%; }
+          .youtube .inner .frame article .inner .pic {
+            width: 49%;
+            height: 327px;
+            cursor: pointer;
+            object-fit: cover;
+            overflow: hidden; }
+            .youtube .inner .frame article .inner .pic img {
+              width: 100%;
+              height: 100%;
+              transition: 0.5s;
+              position: relative;
+              box-sizing: border-box; }
+              .youtube .inner .frame article .inner .pic img:hover {
+                transform: scale(1.1);
+                filter: grayscale(70%); }
+          .youtube .inner .frame article .inner .txt {
+            box-sizing: border-box;
+            margin-left: 60px;
+            padding: 30px;
+            width: 50%; }
+            .youtube .inner .frame article .inner .txt h2 {
+              font: bold 26px/1.2 "Noto Serif Display";
+              color: #585b49;
+              margin-bottom: 20px;
+              word-break: break-all;
+              width: auto;
+              letter-spacing: 0.5px; }
+            .youtube .inner .frame article .inner .txt span {
+              color: #93938f;
+              font: normal 16px "Baloo 2";
+              font-weight: 600;
+              letter-spacing: 0.5px;
+              transform: translateY(-10px);
+              display: block; }
+            .youtube .inner .frame article .inner .txt p {
+              font: normal 16px/1.8 "Baloo 2";
+              color: #6D6D65;
+              word-break: break-all;
+              margin-top: 30px;
+              letter-spacing: 1px; }
+            .youtube .inner .frame article .inner .txt a {
+              font: normal 13px/40px "Baloo 2";
+              width: 200px;
+              height: 40px;
+              text-align: center;
+              background-color: #b2b2a2;
+              transition: 0.5s;
+              display: block;
+              color: #fff;
+              margin-top: 40px;
+              margin-left: 270px; }
+              .youtube .inner .frame article .inner .txt a:hover {
+                background-color: #585b49; }
     .youtube .inner .pop {
       width: 100%;
       height: 100vh;
@@ -1495,16 +1837,81 @@ footer {
 
 #join {
   width: 100%;
-  height: 780px;
+  height: 1280px;
   background-color: #f3f2ed; }
+  #join .topPic {
+    background: url(/public/img/slider7.jpg) bottom;
+    width: 100%;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; }
+    #join .topPic p {
+      position: absolute;
+      font: bold 60px/1.8 "DM Serif Display";
+      letter-spacing: 3px;
+      color: #fff;
+      top: 32%;
+      left: 50%;
+      transform: translateX(-50%); }
+    #join .topPic span {
+      position: absolute;
+      font: normal 25px "Cardo";
+      color: #FFF;
+      top: 45%;
+      left: 25%; }
+    #join .topPic aside {
+      width: 800px;
+      height: 100px;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      overflow: hidden;
+      z-index: 3; }
+      #join .topPic aside .top {
+        width: 37%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: 0px; }
+      #join .topPic aside .right {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: 0; }
+      #join .topPic aside .bottom {
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        right: 0; }
+      #join .topPic aside .left {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+      #join .topPic aside .topLeft {
+        width: 37%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 0; }
   #join .inner {
     width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto;
     position: relative; }
     #join .inner .pic {
       position: absolute;
       left: 603px;
-      top: 48px;
+      top: 230px;
       width: 1612px;
       height: 668px;
       opacity: 0.05;
@@ -1550,7 +1957,7 @@ footer {
       position: absolute;
       top: 376px;
       left: 149px; }
-    #join .inner span {
+    #join .inner > span {
       position: absolute;
       top: 470px;
       left: 146px;
@@ -1567,58 +1974,148 @@ footer {
       font: normal 12px/1.8 "Baloo 2";
       text-align: left;
       letter-spacing: 0.8px; }
-    #join .inner .wrap a {
+    #join .inner form {
+      width: 55%;
       position: absolute;
-      height: 41px;
-      left: 660px;
-      top: 650px;
-      width: 240px;
-      background-color: #ab8e73;
-      border-color: #ab8e73;
-      color: #fff;
-      font: normal 13px/41px "Baloo 2";
-      font-weight: 300;
-      letter-spacing: 1.2px;
-      text-align: center; }
-    #join .inner .wrap input {
-      width: 550px;
-      height: 41px;
-      background-color: #fff;
-      border: none;
-      outline: none;
-      font: normal 13px/41px "Baloo 2";
-      padding: 10px;
-      color: #000;
-      font-weight: 300;
-      position: absolute;
-      right: 105px; }
-      #join .inner .wrap input:nth-of-type(1) {
-        top: 101px; }
-      #join .inner .wrap input:nth-of-type(2) {
-        top: 162px; }
-      #join .inner .wrap input:nth-of-type(3) {
-        top: 223px; }
-      #join .inner .wrap input:nth-of-type(4) {
-        top: 284px; }
-      #join .inner .wrap input:nth-of-type(5) {
-        top: 345px; }
-    #join .inner .wrap textarea {
-      position: absolute;
-      top: 406px;
-      right: 105px;
-      height: 194px;
-      width: 550px;
-      background-color: #fff;
-      border: none;
-      outline: none;
-      font: normal 13px/41px "Baloo 2";
-      padding: 10px;
-      color: #000;
-      font-weight: 300; }
+      right: 0;
+      top: 105px; }
+      #join .inner form table {
+        width: 100%; }
+        #join .inner form table th {
+          text-indent: -9999px;
+          opacity: 0; }
+          #join .inner form table th:last-child {
+            text-indent: 0;
+            opacity: 1; }
+          #join .inner form table th input[type=reset], #join .inner form table th input[type=submit] {
+            height: 41px;
+            width: 140px;
+            background-color: #ab8e73;
+            border-color: #ab8e73;
+            color: #fff;
+            cursor: pointer;
+            font: normal 13px/39px "Baloo 2";
+            font-weight: 300;
+            letter-spacing: 1.2px;
+            text-align: center;
+            margin: 35px 25px;
+            transition: 0.5s;
+            transform: translateX(-15px); }
+            #join .inner form table th input[type=reset]:hover, #join .inner form table th input[type=submit]:hover {
+              background-color: #b3a395;
+              border-color: #b3a395; }
+        #join .inner form table td input[type=text], #join .inner form table td input[type=password], #join .inner form table td input[type=email] {
+          width: 90%;
+          height: 41px;
+          background-color: #fff;
+          border: none;
+          outline: none;
+          font: normal 13px/41px "Baloo 2";
+          padding: 10px;
+          color: #000;
+          font-weight: 300;
+          margin-bottom: 15px; }
+        #join .inner form table td input[type=checkbox], #join .inner form table td input[type=radio] {
+          margin-right: 55px; }
+        #join .inner form table td label {
+          font: normal 14px/30px "Baloo 2";
+          margin-right: 7px;
+          margin-left: 10px; }
+        #join .inner form table td select {
+          width: 90%;
+          font: normal 13px/21px "Baloo 2";
+          padding: 10px;
+          color: #000;
+          font-weight: 300;
+          outline: none;
+          border: none;
+          margin-bottom: 15px; }
+        #join .inner form table td textarea {
+          height: 194px;
+          width: 90%;
+          border: none;
+          outline: none;
+          margin-bottom: 15px;
+          font: normal 13px/21px "Baloo 2";
+          padding: 10px;
+          font-weight: 300; }
+        #join .inner form table td .err {
+          display: block;
+          width: 90%;
+          text-align: left;
+          font: 11px/1 "Baloo 2";
+          color: red;
+          margin-left: 10px;
+          transform: translateY(-7px); }
 
 #department {
   width: 100%;
   background-color: #f3f2ed; }
+  #department .topPic {
+    background: url(/public/img/slider1.jpg) bottom;
+    width: 100%;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -1; }
+    #department .topPic p {
+      position: absolute;
+      font: bold 60px/1.8 "DM Serif Display";
+      letter-spacing: 3px;
+      color: #fff;
+      top: 40%;
+      left: 60px;
+      transform: translateY(-50%); }
+    #department .topPic span {
+      position: absolute;
+      font: normal 25px "Cardo";
+      color: #FFF;
+      top: 47%;
+      left: 60px; }
+    #department .topPic aside {
+      width: 800px;
+      height: 100px;
+      position: absolute;
+      top: 41%;
+      left: 30px;
+      overflow: hidden;
+      z-index: 3; }
+      #department .topPic aside .top {
+        width: 60%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 400px; }
+      #department .topPic aside .right {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: 0; }
+      #department .topPic aside .bottom {
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        right: 0; }
+      #department .topPic aside .left {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+      #department .topPic aside .topLeft {
+        width: 20px;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 0; }
   #department .inner {
     width: 1200px;
     margin: 0 auto; }
@@ -1744,7 +2241,7 @@ footer {
         , #department .inner .contents .peoples .human3
         , #department .inner .contents .peoples .human4 {
           width: 20%;
-          height: 250px;
+          height: 260px;
           margin-right: 10px;
           position: relative; }
           #department .inner .contents .peoples .human1
@@ -1797,5 +2294,183 @@ footer {
             height: 100%;
             background-color: #b2b2a2;
             border-radius: 10px; }
+
+#location {
+  width: 100%;
+  background-color: #f3f2ed; }
+  #location .topPic {
+    background: url(/public/img/slider6.jpg) center;
+    width: 100%;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; }
+    #location .topPic p {
+      position: absolute;
+      font: bold 60px/1.8 "DM Serif Display";
+      letter-spacing: 3px;
+      color: #fff;
+      top: 22%;
+      left: 70%;
+      transform: translateX(-50%); }
+    #location .topPic span {
+      position: absolute;
+      font: normal 25px "Cardo";
+      color: #FFF;
+      top: 35%;
+      left: 45%; }
+    #location .topPic aside {
+      width: 800px;
+      height: 100px;
+      position: absolute;
+      top: 30%;
+      right: 4%;
+      overflow: hidden;
+      z-index: 3; }
+      #location .topPic aside .top {
+        width: 30%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: 0px; }
+      #location .topPic aside .right {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: 0; }
+      #location .topPic aside .bottom {
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        right: 0; }
+      #location .topPic aside .left {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+      #location .topPic aside .topLeft {
+        width: 30%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 0; }
+  #location .inner {
+    width: 1200px;
+    height: 1100px;
+    position: relative;
+    margin: 0px auto; }
+    #location .inner #map {
+      width: 50%;
+      height: 630px;
+      background: #000;
+      position: absolute;
+      top: 180px;
+      right: 0; }
+    #location .inner .traffic {
+      position: absolute;
+      left: 52%;
+      bottom: 220px; }
+      #location .inner .traffic li {
+        padding: 15px 20px;
+        background-color: #ab8e73;
+        text-align: center;
+        font: normal 14px "Baloo 2";
+        letter-spacing: 1px;
+        color: #fff;
+        cursor: pointer; }
+    #location .inner .branch {
+      position: absolute;
+      right: 0;
+      bottom: 220px;
+      display: flex; }
+      #location .inner .branch li {
+        padding: 15px 20px;
+        background-color: #ab8e73;
+        text-align: center;
+        font: normal 14px "Baloo 2";
+        letter-spacing: 1px;
+        color: #fff;
+        cursor: pointer;
+        margin: 0 10px;
+        border-color: #b3a395; }
+        #location .inner .branch li.on {
+          color: #fff;
+          background-color: #b3a395; }
+    #location .inner .wrap {
+      width: 50%;
+      height: 630px;
+      position: absolute;
+      left: 0;
+      top: 180px;
+      background: #b2b2a2;
+      padding: 90px 65px; }
+      #location .inner .wrap h1 {
+        color: #fff;
+        font: bold 51px/41px "DM Serif Display";
+        letter-spacing: 3px;
+        margin-bottom: 30px; }
+      #location .inner .wrap h2 {
+        color: #fff;
+        font: bold 18px "Baloo 2";
+        letter-spacing: 1px;
+        margin-bottom: 12px; }
+      #location .inner .wrap .contacts,
+      #location .inner .wrap .opening {
+        border-top: 1px solid #585b4980;
+        padding-top: 10px; }
+        #location .inner .wrap .contacts li,
+        #location .inner .wrap .opening li {
+          color: #f0efe4;
+          font: normal 23px "Cardo";
+          letter-spacing: 1px;
+          position: relative;
+          display: flex;
+          margin-bottom: 10px; }
+          #location .inner .wrap .contacts li p,
+          #location .inner .wrap .opening li p {
+            width: 90px;
+            margin-left: 10px; }
+          #location .inner .wrap .contacts li span,
+          #location .inner .wrap .opening li span {
+            margin-left: 50px; }
+            #location .inner .wrap .contacts li span::after,
+            #location .inner .wrap .opening li span::after {
+              content: "";
+              width: 1px;
+              height: 130%;
+              display: inline-block;
+              position: absolute;
+              top: 0;
+              left: 25%;
+              background: #585b4980; }
+      #location .inner .wrap .contacts {
+        margin-bottom: 40px; }
+        #location .inner .wrap .contacts li:nth-of-type(1) span {
+          color: #ffe7b7; }
+      #location .inner .wrap::after {
+        display: block;
+        width: 250px;
+        height: 100px;
+        content: "";
+        background-color: #fff;
+        position: absolute;
+        top: -40px;
+        left: -90px;
+        opacity: 0.7;
+        transform: rotate(-30deg); }
+    #location .inner > p {
+      font: normal 20px/1.8 "Baloo 2";
+      width: 45%;
+      position: absolute;
+      left: 20px;
+      top: 80%; }
 
 /*# sourceMappingURL=style.css.map */

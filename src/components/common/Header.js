@@ -2,9 +2,15 @@ import { useRef, useState } from 'react';
 import {NavLink} from 'react-router-dom';
 
 function Header(){
-  
     const path = process.env.PUBLIC_URL;
+    const gnbMo = useRef(null);
     const logoPic = `${path}/img/logoPic.png`;
+    const [isClose,setIsClose] = useState(false);
+    const clickClose = e => {
+      e.preventDefault();
+      setIsClose(true);
+      console.log(gnbMo.current.className);
+    }
     return (
       <header>
         <div className="inner">
@@ -24,7 +30,8 @@ function Header(){
             </a>
           </div>
           
-          <ul id="gnbMo" >
+        
+          <ul id="gnbMo" ref={gnbMo} className={isClose ? "yes" : "no"} >
               <li><NavLink exact to="/" ><img src={logoPic}  /><span></span></NavLink></li>
               <li><NavLink exact to="/department">Department</NavLink></li>
               <li><NavLink exact to="/community">Community</NavLink></li>
@@ -32,6 +39,7 @@ function Header(){
               <li><NavLink exact to="/youtube">Youtube</NavLink></li>
               <li><NavLink exact to="/location">Location</NavLink></li>
               <li><NavLink exact to="/join">Join</NavLink></li>
+              <li><a href="#" onClick={clickClose}>X</a></li>
             </ul>
         </div>
       </header>

@@ -1,3 +1,6 @@
+import Anime from '../class/anime.js';
+import { useEffect, useReducer, useRef } from "react";
+
 function Department() {
     const path = process.env.PUBLIC_URL;
     const titPic = `${path}/img/titPic.png`;
@@ -7,9 +10,68 @@ function Department() {
     const human2 = `${path}/img/departmentPic4.jpg`;
     const human3 = `${path}/img/departmentPic5.jpg`;
     const human4 = `${path}/img/departmentPic6.jpg`;
+    const top = useRef(null);
+    const right = useRef(null);
+    const bottom = useRef(null);
+    const left = useRef(null);
+    const pop = useRef(null);
+    const topLeft = useRef(null);
+
+    useEffect(()=>{
+        window.addEventListener("road", test);
+
+        return () => {
+            window.removeEventListener("road", test);
+        }
+    },[])
+
+    function test() {
+        pop.getComputedStyle.display = 'block';
+
+
+        new Anime(top.current, {
+            prop : "width",
+            value : "100%",
+            duration: 500,
+            callback : () => {
+                new Anime(right.current, {
+                    prop : "width",
+                    value : "100%",
+                    duration : 500,
+                    callback : () => {
+                        new Anime (bottom.current, {
+                            prop : "width",
+                            value : "100%",
+                            duration : 500,
+                            callback : () => {
+                                new Anime(left.current, {
+                                    prop: "height",
+                                    value : "100%",
+                                    duration : 500
+                                })
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    }
 
     return(
         <div id="department">
+                <div className="topPic">
+                    <aside ref={pop}>
+                        <div className="top" ref={top}></div>
+                        <div className="right" ref={right}></div>
+                        <div className="bottom" ref={bottom}></div>
+                        <div className="left" ref={left}></div>
+                        <div className="topLeft" ref={topLeft}></div>
+                    </aside>
+                        
+                        <p>Department</p>
+                        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, doloribus!</span>
+                </div>
+
             <div className="inner">
                 <div className="title">
                     <h1>OUR STORY</h1>
