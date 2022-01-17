@@ -41,6 +41,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "https://github.com/kimsooin77/react_pf.git"
+    "gh-pages": "https://github.com/kimsooin77/reactPf.git"
   }
 }
