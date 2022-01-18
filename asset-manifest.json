@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/kimsooin77/reactPf/static/css/main.8dd3fc0c.css",
-    "main.js": "/kimsooin77/reactPf/static/js/main.709bbe7f.js",
-    "static/media/home_bg.jpg": "/kimsooin77/reactPf/static/media/home_bg.3f7de77c3e136a775803.jpg",
-    "static/media/began_bg.png": "/kimsooin77/reactPf/static/media/began_bg.ded9bd735234cef88796.png",
-    "static/media/bookBg.jpg": "/kimsooin77/reactPf/static/media/bookBg.8bbcaf8ef7b016c6dc95.jpg",
-    "static/media/slider1.jpg": "/kimsooin77/reactPf/static/media/slider1.7f1910d7e530c4c05eb7.jpg",
-    "static/media/slider7.jpg": "/kimsooin77/reactPf/static/media/slider7.e161d3cbbb383d32c259.jpg",
-    "static/media/slider11.jpg": "/kimsooin77/reactPf/static/media/slider11.8bd9ea9d658d10c2490c.jpg",
-    "static/media/slider3.jpg": "/kimsooin77/reactPf/static/media/slider3.90d20a93c0c2e4806ff2.jpg",
-    "static/media/slider6.jpg": "/kimsooin77/reactPf/static/media/slider6.50df9ed766a96f1a4426.jpg",
-    "static/media/slider4.jpg": "/kimsooin77/reactPf/static/media/slider4.72675acf4a76e2c49300.jpg",
-    "index.html": "/kimsooin77/reactPf/index.html",
-    "main.8dd3fc0c.css.map": "/kimsooin77/reactPf/static/css/main.8dd3fc0c.css.map",
-    "main.709bbe7f.js.map": "/kimsooin77/reactPf/static/js/main.709bbe7f.js.map"
+    "main.css": "/reactPf/static/css/main.92a90dea.css",
+    "main.js": "/reactPf/static/js/main.72f797b0.js",
+    "static/media/home_bg.jpg": "/reactPf/static/media/home_bg.3f7de77c3e136a775803.jpg",
+    "static/media/began_bg.png": "/reactPf/static/media/began_bg.ded9bd735234cef88796.png",
+    "static/media/bookBg.jpg": "/reactPf/static/media/bookBg.8bbcaf8ef7b016c6dc95.jpg",
+    "static/media/slider1.jpg": "/reactPf/static/media/slider1.7f1910d7e530c4c05eb7.jpg",
+    "static/media/slider7.jpg": "/reactPf/static/media/slider7.e161d3cbbb383d32c259.jpg",
+    "static/media/slider11.jpg": "/reactPf/static/media/slider11.8bd9ea9d658d10c2490c.jpg",
+    "static/media/slider3.jpg": "/reactPf/static/media/slider3.90d20a93c0c2e4806ff2.jpg",
+    "static/media/slider6.jpg": "/reactPf/static/media/slider6.50df9ed766a96f1a4426.jpg",
+    "static/media/slider4.jpg": "/reactPf/static/media/slider4.72675acf4a76e2c49300.jpg",
+    "index.html": "/reactPf/index.html",
+    "main.92a90dea.css.map": "/reactPf/static/css/main.92a90dea.css.map",
+    "main.72f797b0.js.map": "/reactPf/static/js/main.72f797b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.8dd3fc0c.css",
-    "static/js/main.709bbe7f.js"
+    "static/css/main.92a90dea.css",
+    "static/js/main.72f797b0.js"
   ]
 }
