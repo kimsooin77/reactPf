@@ -9,125 +9,127 @@
           position: absolute; font: bold 60px/1.8 "DM Serif Display"; letter-spacing: 3px;
           color: #fff; top: 22%; left: 70%; transform: translateX(-50%);
           
-      }
-      span {
-          position: absolute; font: normal 25px "Cardo";
-          color: #FFF;top: 35%; left: 45%;
-      }
-  
-      aside{
-          width: 800px; height: 100px; position: absolute; top: 30%; right: 4%; 
-          overflow: hidden; z-index: 3;
-  
-          .top {
-              width: 30%;  height: 1px; background: #fff;
-              position: absolute; top: 0; right: 0px;
-          }
-          .right {
-              width: 1px; height: 100%; background: #fff;
-              position: absolute; top: 0; right: 0;
-          }
-          .bottom {
-              width: 100%; height: 1px; background: #fff;
-              position: absolute; bottom: 0; right: 0;
-          }
-          .left {
-              width: 1px; height: 100%; background: #fff;
-              position: absolute; bottom: 0; left: 0;
-          }
-          .topLeft {
-              width: 30%;
-              height: 1px; background: #fff; position: absolute; top: 0; left: 0;
-          }
         }
-      }
-      .inner {
-          width: 1200px; height: 1100px; position: relative;
-          margin: 0px auto; 
-          #map {
-              width: 50%; height: 630px; background: #000;
-              position: absolute; top: 180px; right: 0;
-          }
+        span {
+            position: absolute; font: normal 25px "Cardo";
+            color: #FFF;top: 35%; left: 45%;
+        }
+    
+        aside{
+            width: 800px; height: 100px; position: absolute; top: 30%; right: 4%; 
+            overflow: hidden; z-index: 3;
+    
+            .top {
+                width: 30%;  height: 1px; background: #fff;
+                position: absolute; top: 0; right: 0px;
+            }
+            .right {
+                width: 1px; height: 100%; background: #fff;
+                position: absolute; top: 0; right: 0;
+            }
+            .bottom {
+                width: 100%; height: 1px; background: #fff;
+                position: absolute; bottom: 0; right: 0;
+            }
+            .left {
+                width: 1px; height: 100%; background: #fff;
+                position: absolute; bottom: 0; left: 0;
+            }
+            .topLeft {
+                width: 30%;
+                height: 1px; background: #fff; position: absolute; top: 0; left: 0;
+            }
+            }
+    }
+        .inner {
+            width: 1200px; height: 1100px; position: relative;
+            margin: 0px auto; 
+            #map {
+                width: 50%; height: 630px; background: rgba(178,178,162,1);
+                position: absolute; top: 200px; right: 30px;
+            }
 
-          .traffic {
-              position: absolute; left: 52%; bottom: 220px;
+            .traffic {
+                position: absolute; right: -8%; bottom: 280px;
+                z-index: 1;
+                li {
+                    padding: 15px 20px; background-color: #ab8e73; text-align: center; 
+                    font: normal 14px "Baloo 2"; letter-spacing: 1px; color: #fff; cursor: pointer;
+                    
+                    }
+            }
+            
+            .branch {
+                position: absolute;right: -4.7%; bottom: 330px; 
+                    display: flex; flex-direction: column; z-index: 1;
+                li {
+                    padding: 15px 20px; background-color: #ab8e73; text-align: center; 
+                    font: normal 14px "Baloo 2"; letter-spacing: 1px; color: #fff; cursor: pointer;
+                    margin: 0 10px; border-color: #b3a395; opacity: 0.6; transition: 0.5s;
 
-              li {
-                  padding: 15px 20px; background-color: #ab8e73; text-align: center; 
-                  font: normal 14px "Baloo 2"; letter-spacing: 1px; color: #fff; cursor: pointer;
-                  
+                    &.on{
+                    color: #fff; background-color: #b3a395;
+                    }
+                    &:hover {opacity: 1;}
                 }
             }
-          
-          .branch {
-              position: absolute;right: 0; bottom: 220px;
-                display: flex; 
-              li {
-                padding: 15px 20px; background-color: #ab8e73; text-align: center; 
-                font: normal 14px "Baloo 2"; letter-spacing: 1px; color: #fff; cursor: pointer;
-                 margin: 0 10px; border-color: #b3a395;
 
-                &.on{
-                  color: #fff; background-color: #b3a395;
+            .wrap {
+                width: 99%; height: 670px; position: absolute; left: 0; top: 180px;
+                background: rgba(178,178,162,1); padding: 90px 65px;
+                    
+                h1 {
+                    color: #fff; font: bold 51px/41px "DM Serif Display";
+                    letter-spacing: 3px; margin-bottom: 30px; 
                 }
-              }
-          }
+                h2 {
+                    color: #fff; font: bold 18px "Baloo 2";
+                    letter-spacing: 1px; margin-bottom: 12px;
+                }
+                .contacts,
+                .opening {
+                    width: 45%;
+                    border-top: 1px solid #585b4980; padding-top: 10px;
 
-          .wrap {
-              width: 50%; height: 630px; position: absolute; left: 0; top: 180px;
-              background: rgba(178,178,162,1); padding: 90px 65px;
-                
-              h1 {
-                color: #fff; font: bold 51px/41px "DM Serif Display";
-                letter-spacing: 3px; margin-bottom: 30px; 
-              }
-              h2 {
-                  color: #fff; font: bold 18px "Baloo 2";
-                  letter-spacing: 1px; margin-bottom: 12px;
-              }
-            .contacts,
-            .opening {
-                border-top: 1px solid #585b4980; padding-top: 10px;
+                    li {
+                        color: #f0efe4; font: normal 23px "Cardo"; letter-spacing: 1px;
+                        position: relative; display: flex; margin-bottom: 10px;
 
-                li {
-                    color: #f0efe4; font: normal 23px "Cardo"; letter-spacing: 1px;
-                    position: relative; display: flex; margin-bottom: 10px;
+                        p {
+                            width: 90px; margin-left: 10px;
+                        }
+                        span {
+                            margin-left: 50px;
 
-                    p {
-                        width: 90px; margin-left: 10px;
-                    }
-                    span {
-                        margin-left: 50px;
-
-                        &::after {
-                            content: "";
-                            width: 1px;
-                            height: 130%; 
-                            display: inline-block; position: absolute; top: 0; left: 25%;
-                            background: #585b4980; 
+                            &::after {
+                                content: "";
+                                width: 1px;
+                                height: 130%; 
+                                display: inline-block; position: absolute; top: 0; left: 25%;
+                                background: #585b4980; 
+                            }
                         }
                     }
                 }
+                .contacts {
+                    margin-bottom: 40px;
+
+                li {
+                        &:nth-of-type(1) span { color: #ffe7b7;}
+                } 
+
+                }
+
+                &::after {
+                    display: block;
+                    width: 250px; height: 100px; content:  "";
+                    background-color: #fff; position: absolute;
+                    top: -40px; left: -90px; opacity: 0.7; transform: rotate(-30deg);
+                }  
             }
-            .contacts {
-                margin-bottom: 40px;
-
-               li {
-                    &:nth-of-type(1) span { color: #ffe7b7;}
-               } 
-
+            >p {
+                font: normal 20px/1.8 "Baloo 2"; width: 45%;
+                    position: absolute; left: 20px; top: 80%;
             }
-
-            &::after {
-                display: block;
-                width: 250px; height: 100px; content:  "";
-                background-color: #fff; position: absolute;
-                top: -40px; left: -90px; opacity: 0.7; transform: rotate(-30deg);
-            }  
-          }
-          >p {
-              font: normal 20px/1.8 "Baloo 2"; width: 45%;
-                position: absolute; left: 20px; top: 80%;
-          }
-      }
+        }
 }
