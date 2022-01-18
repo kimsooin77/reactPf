@@ -16,13 +16,14 @@ function Department() {
     const left = useRef(null);
     const pop = useRef(null);
     const topLeft = useRef(null);
+    const frame = useRef(null);
 
     useEffect(()=>{
-        window.addEventListener("road", test);
-
-        return () => {
-            window.removeEventListener("road", test);
-        }
+        // window.addEventListener("road", test);
+        
+        // return () => {
+        //     window.removeEventListener("road", test);
+        // }
     },[])
 
     function test() {

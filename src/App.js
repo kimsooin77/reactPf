@@ -18,9 +18,11 @@ import Youtube from './components/sub/Youtube.js';
 import Join from './components/sub/Join.js';
 import Department from './components/sub/Department.js';
 import Location from './components/sub/Location.js';
+import { useEffect, useRef } from 'react';
 
 
 function App() {
+ 
   return (
     <div className="App">
           <Route exact path="/department" component={Department}>
@@ -44,7 +46,7 @@ function App() {
           
 
           <Route exact path="/">
-            <Header />
+            <Header  />
             <Visual />
             <Info />
             <Commend />
@@ -63,7 +65,6 @@ function App() {
           
 
           <Footer />
-
     </div>
   );
 }

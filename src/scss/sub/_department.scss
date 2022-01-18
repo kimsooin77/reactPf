@@ -55,7 +55,7 @@
             }
             span{
                 display: block; margin-top: 20px;
-                font: normal 20px/1.8 "Baloo 2"; letter-spacing: 1.2pxs;
+                font: normal 20px/1.8 "Baloo 2"; letter-spacing: 1.2px;
                 text-align: center; font-weight: 300;
             }
             .line {
@@ -150,6 +150,125 @@
                         content: ""; margin: -10px 10px; display: inline-block;
                         width: 100%; height: 100%; background-color:#b2b2a2; border-radius: 10px;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 863px){
+    #department {
+        transition: 0.5s;
+        span {
+            top: 47%; left: 60px; display: block;width: 500px;
+        }
+        
+        .topPic {
+                aside{ width: 500px; height: 150px; }
+        }
+        .inner {
+            width: 100%; margin: 0 auto; 
+            .title {
+                width: 100%; height: 500px; position: relative;
+                span{
+                    width: 100%; margin: 20px auto 0;
+                }
+                .line {  width: 80%; }
+                p {  width: 90%;  }
+            }
+    
+            .contents {
+                width: 100%; height: 2200px; position: relative;
+                .wrap {
+                    position: relative; 
+                    .furniture1 {
+                        position: absolute; left: 50%; top: 750px;
+                        width: 80%; height: 388px; transform: translateX(-50%);
+                    }
+                    .p1 {
+                        width: 90%; position: absolute; left: 50%; transform: translateX(-50%); top: 1170px;
+                         text-align: center; 
+                    }
+                    .verticalLine {
+                        height: 1px; width: 90%; 
+                        position: absolute; left: 50%; transform: translateX(-50%); top: 1350px;
+                    }
+                    .furniture2 {
+                        position: absolute; left: 50%; top: 1420px;
+                        width: 80%; height: 431px; transform: translateX(-50%);
+    
+                        img {width: 100%; height: 100%;}
+                    }
+                    .p2 {
+                        width: 90%; position: absolute; left: 50%; top: 1908px; transform: translateX(-50%);
+                        text-align: center; 
+                    }
+                }
+                
+                .peoples {
+                    width: 90%; display: flex; position: absolute;
+                    top: 5%; left: 50%; transform: translateX(-50%);
+                    justify-content: space-between; flex-wrap: wrap;
+    
+                    .human1
+                    ,.human2
+                    ,.human3
+                    ,.human4 { width: 45%; height: 260px; margin:15px 10px; }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 570px){
+    #department {
+        transition: 0.5s;
+        
+        
+        .topPic {
+                aside{ width: 500px; height: 150px; }
+
+                p {
+                    position: absolute; font: bold 50px/1.8 "DM Serif Display";
+                    left: 50%; transform: translateX(-50%); top: 35%;
+                }
+                span {
+                    position: absolute; font: normal 23px "Cardo"; width: 80%;
+                    left: 50%; transform: translateX(-50%); text-align: center;
+                }
+        
+                aside{ display: none;  }
+        }
+        .inner {
+            width: 100%; margin: 0 auto; 
+            .title {
+                width: 100%; height: 500px; position: relative;
+
+                h1 { font: bold 50px/1.1 "Noto Serif Display"; }
+                span{font: normal 18px/1.8 "Baloo 2";}
+            }
+    
+            .contents {
+                width: 100%; height: 3000px; position: relative;
+                .wrap {
+                    position: relative; transform: translateY(750px);
+                    
+                    .verticalLine {
+                        height: 1px; width: 90%; 
+                        position: absolute; left: 50%; transform: translateX(-50%); top: 1370px;
+                    }
+                }
+                .teamInfo {
+                    left: 50%; transform: translateX(-50%); 
+                    text-align: center;top: 2%; 
+                }
+                .peoples {
+                    width: 90%; top: 6%; left: 50%; transform: translateX(-45%);
+    
+                    .human1
+                    ,.human2
+                    ,.human3
+                    ,.human4 { width: 80%; height: 260px; margin:15px 10px; }
                 }
             }
         }

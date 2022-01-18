@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/kimsooin77/reactPf",
   "name": "portfolio",
   "version": "0.1.0",
   "private": false,
@@ -41,6 +42,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "https://github.com/kimsooin77/reactPf.git"
+    "gh-pages": "^3.2.3"
   }
 }

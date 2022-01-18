@@ -42,7 +42,7 @@
         }
     }
   }
-    .inner {
+  .inner {
       position: relative; padding: 40px 0; width: 1180px; margin: 0 auto;
       h1 {
         padding: 30px 15px;  position: absolute; width: 100%;
@@ -94,7 +94,7 @@
           }
         }
       }
-    }
+  }
   
     .pop {
       width: 100%; height: 100vh; position: fixed; top: 0px; left: 0px; background: rgba(0,0,0,.9); padding: 5vw;
@@ -117,18 +117,31 @@
   
   @media screen and (max-width: 1179px){
     .gallery {
-      .item {width: 33.333%!important;}
+      .inner {
+        ul {
+          .item {width: 33.333%!important;}
+        }
+      }
     }
   }
   
   @media screen and (max-width: 739px){
     .gallery {
-      .item {width: 50%!important;}
+      .inner {
+        ul {
+          .item {width: 50%;}
+
+        }
+      }
     }
   }
   
   @media screen and (max-width: 479px){
     .gallery {
-      .item {width: 100%!important;}
+      .inner {
+        ul {
+          .item {width: 100%!important;}
+        }
+      }
     }
   }

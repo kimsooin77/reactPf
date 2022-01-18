@@ -41,7 +41,7 @@ function Gallery() {
     },[url])
 
     return(
-        <section className="gallery">
+        <section  className="gallery">
             <div className="topPic">
             <aside ref={pop}>
                     <div className="top" ref={top}></div>
@@ -124,3 +124,7 @@ function Gallery() {
 }
 
 export default Gallery;
+
+// 어떤 이벤트가 발생했을 때 handle"이벤트명" 으로 작성하는게 일반적이다.
+// 예를 들어 handleResize나 handleChange등
+
