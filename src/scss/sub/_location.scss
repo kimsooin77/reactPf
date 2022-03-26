@@ -1,5 +1,5 @@
 #location {
-    width: 100%; background-color: rgba(243,242,237,1);
+    width: 100%; background-color: rgba(243,242,237,1); padding-bottom:2px;
     .topPic {
         background: url(/public/img/slider6.jpg) center; width: 100%;
         height: 60vh; background-repeat: no-repeat; background-attachment: fixed;
@@ -42,40 +42,14 @@
             }
     }
         .inner {
-            width: 1200px; height: 1100px; position: relative;
+            width: 1200px; position: relative;
             margin: 0px auto; 
             #map {
-                width: 50%; height: 630px; background: rgba(178,178,162,1);
-                position: absolute; top: 200px; right: 30px;
+                width: 50%; height: 600px; background: rgba(178,178,162,1);
+                position: absolute; bottom: 20px; right: 30px;
             }
-
-            .traffic {
-                position: absolute; right: -8%; bottom: 280px;
-                z-index: 1;
-                li {
-                    padding: 15px 20px; background-color: #ab8e73; text-align: center; 
-                    font: normal 14px "Baloo 2"; letter-spacing: 1px; color: #fff; cursor: pointer;
-                    
-                    }
-            }
-            
-            .branch {
-                position: absolute;right: -4.7%; bottom: 330px; 
-                    display: flex; flex-direction: column; z-index: 1;
-                li {
-                    padding: 15px 20px; background-color: #ab8e73; text-align: center; 
-                    font: normal 14px "Baloo 2"; letter-spacing: 1px; color: #fff; cursor: pointer;
-                    margin: 0 10px; border-color: #b3a395; opacity: 0.6; transition: 0.5s;
-
-                    &.on{
-                    color: #fff; background-color: #b3a395;
-                    }
-                    &:hover {opacity: 1;}
-                }
-            }
-
             .wrap {
-                width: 99%; height: 670px; position: absolute; left: 0; top: 180px;
+                width: 100%; margin:130px auto; position: relative;
                 background: rgba(178,178,162,1); padding: 90px 65px;
                     
                 h1 {
@@ -114,22 +88,234 @@
                 .contacts {
                     margin-bottom: 40px;
 
-                li {
+                    li {
                         &:nth-of-type(1) span { color: #ffe7b7;}
-                } 
-
+                    } 
                 }
-
-                &::after {
-                    display: block;
-                    width: 250px; height: 100px; content:  "";
-                    background-color: #fff; position: absolute;
-                    top: -40px; left: -90px; opacity: 0.7; transform: rotate(-30deg);
-                }  
             }
-            >p {
-                font: normal 20px/1.8 "Baloo 2"; width: 45%;
-                    position: absolute; left: 20px; top: 80%;
+
+            .btns {
+                display: flex; flex-direction: column; width: 160px;
+                position: absolute; right: -8%; bottom: 0%;
+                .traffic {
+                    z-index: 1;
+                    li {
+                        padding: 15px 20px; background-color: #ab8e73; text-align: center; 
+                        font: normal 14px "Baloo 2"; letter-spacing: 1px; color: #fff; cursor: pointer;
+                    }
+                }
+                
+                .branch {
+                    display: flex; flex-direction: column; z-index: 1; margin-left: -10px;
+                    
+                    li {
+                        padding: 15px 20px; background-color: #ab8e73; text-align: center; 
+                        font: normal 14px "Baloo 2"; letter-spacing: 1px; color: #fff; cursor: pointer;
+                        margin: 0 10px; border-color: #b3a395; opacity: 0.6; transition: 0.5s;
+    
+                        &.on{opacity: 1;}
+                        &:hover {opacity: 1;}
+                    }
+                }
+            }
+            
+
+            .txtBox {
+                width: 100%; display: flex; align-items: center; justify-content: space-between;
+                text-align: left; margin: 100px auto;
+                article {
+                    width: 310px; padding: 0 20px; margin: 0 20px; color: #585b49;
+
+                    h1 {   
+                         font: normal 35px/35px "DM Serif Display";  margin-bottom: 30px;
+                    
+                         &::after {
+                             content: ""; display: block; width: 50px; height: 2px; 
+                             background-color: #585b49; margin-top: 10px; 
+                            }
+                    }
+                    p {    font: normal 17px/20px "Baloo 2"; margin-bottom: 10px;}
+                    span {   font: normal 14px/1 "Baloo 2";}
+                    
+                    &:nth-of-type(2),
+                    &:nth-of-type(3) {
+                        .locationPic {  width: 220px; height: 200px; }
+                    }
+                }
             }
         }
+}
+
+@media screen and (max-width : 1500px) {
+    #location {
+        .topPic {
+            p {top: 22%; left: auto; right: 15%;}
+            span { 
+              right: 5%; left: auto;
+            }
+        
+        }
+    }
+}
+
+@media screen and(max-width : 1179px) {
+    #location {
+        width: 100%; background-color: rgba(243,242,237,1); padding-bottom:2px;
+        .topPic {
+            p {top: 32%; left: 53%;}
+            span { 
+              width: 65%; left: 50%; transform: translateX(-50%);
+              text-align: center; display: block; top: 47%;
+            }
+        
+            aside{
+                width: 700px; height: 160px; position: absolute; top: 40%; left: 50%; transform: translateX(-50%);
+                overflow: hidden; z-index: 3;
+        
+                .top {
+                    width: 26%;  height: 1px; background: #fff;
+                    position: absolute; top: 0; right: 0px;
+                }
+                .right {
+                    width: 1px; height: 100%; background: #fff;
+                    position: absolute; top: 0; right: 0;
+                }
+                .bottom {
+                    width: 100%; height: 1px; background: #fff;
+                    position: absolute; bottom: 0; right: 0;
+                }
+                .left {
+                    width: 1px; height: 100%; background: #fff;
+                    position: absolute; bottom: 0; left: 0;
+                }
+                .topLeft {
+                    width: 33%;
+                    height: 1px; background: #fff; position: absolute; top: 0; left: 0;
+                }
+            }
+        }
+            .inner {
+                width: 900px; position: relative;
+                margin: 0px auto; 
+                #map {
+                    width: 86%; height: 600px; bottom: auto; right: 53px; top: 1003px;
+                }
+                .wrap {
+                    height: 1453px;
+                        
+                    h1 { text-align: center; margin-bottom: 47px;}
+                    h2 { text-align: center; }
+                    .contacts,
+                    .opening {
+                        width: 66%; margin: 0 auto;
+                        
+    
+                        li {
+                            p {
+                                width: 90px; margin-left: 10px;
+                            }
+                            span {
+                                margin-left: 50px;
+    
+                                &::after {  left: 23%; }
+                            }
+                        }
+                    }
+                    .contacts {   margin: 0 auto 77px; }
+     
+                }
+                .btns {
+                     flex-direction: row; width: auto;
+                     right: 21%; bottom: 5%;
+                    
+                    .branch {
+                         flex-direction: row;
+                    }
+                }
+                
+    
+                .txtBox {
+                    width: 100%; display: flex; align-items: center; justify-content: space-between;
+                    text-align: left; margin: 100px auto;
+                    article {
+                        width: 310px; padding: 0 20px; margin: 0 20px; color: #585b49;
+    
+                        h1 {
+                            font: bold 35px/35px "Noto Serif Display";  margin-bottom: 15px;
+                        }
+                        p {
+                            font: normal 17px/20px "Baloo 2"; margin-bottom: 10px;
+                        }
+                        span {
+                            font: normal 14px/1 "Baloo 2";
+                        }
+                        
+    
+                        &:nth-of-type(1) {padding-top: 0px;}
+                        &:nth-of-type(2),
+                        &:nth-of-type(3) {
+                            .locationPic {
+                                width: 220px; height: 200px;
+                            }
+                        }
+                    }
+                }
+            }
+    }
+}
+
+@media screen and (max-width : 960px) {
+    #location {
+        
+        .topPic { 
+    
+            p {
+               top: 24%; left: 50%; transform: translate(-50%,50%); text-align: center;
+            }
+            span {
+                top: 44%; left: 50%; transform: translateX(-50%); text-align: center;
+            }
+        
+            aside{    display: none;    }
+        }
+            .inner {
+                width: 450px; position: relative;
+                margin: 0px auto; 
+                #map {
+                    width: 86%; height: 600px; bottom: 177px; right: 32px; top: auto;
+                }
+                .wrap {
+                    height: 1453px; padding: 90px 31px;
+                        
+                    .contacts,
+                    .opening {
+                        width: 100%; margin: 0 auto;
+    
+                        li {
+                            span {
+                                &::after {  left: 29%; }
+                            }
+                        }
+                    }
+                    .contacts {margin: 0 auto 77px;}
+                }
+                .btns {
+                     flex-direction: row; width: auto;
+                     right: 4%; bottom: 3%; margin-left: 20px;
+                    
+                    .branch {
+                         flex-direction: row;
+                    }
+                }
+    
+                .txtBox {
+                    flex-direction: column;
+                    text-align: center; margin: 68px auto;
+                    article {
+                         margin: 30px 20px; 
+                }
+            }
+        }
+    }
+
 }

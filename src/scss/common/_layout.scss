@@ -2,19 +2,38 @@ header {
     width: 100%; background-color: #000;
     
     >.inner {
-      width: 100%; height: 100vh; margin: 0px auto; background-position: center;
-      background-image: url(/public/img/home_bg.jpg); background-repeat: no-repeat;
-      background-size: cover; background-attachment: fixed; opacity: 0.9;
+      width: 100%; height: 100vh; 
       
+      .swiper {
+        width: 100%; height: 100%;
+        .swiper-pagination {
+          bottom: 50px; text-align: right; width: 90%;
+            .swiper-pagination-bullet {
+              width: 11px; height: 11px; background: rgba(240,237,255,0.4); opacity: 1;
+              &.swiper-pagination-bullet-active { background: rgba(255,255,255,0); border: 2px solid #f0eddf;}
+            }
+
+        }
+
+        .swiper-wrapper {
+          
+          .swiper-slide {
+            width: 100%;
+            .pic {
+              height: 100%;
+              img {width: 100%; height: 100%; object-fit: cover; position: fixed;}
+            } 
+          }
+          
+        }
+      }
       .wrap {
-        max-width: 1200px; height: 700px;  position: relative; margin: 0 auto;
-        text-align: center;
+        max-width: 1200px;  position: relative; margin: 0 auto;
+        text-align: center; transform: translateY(-175%); z-index: 10;
 
         h1 {
-          position: absolute; left: 50%; top: 50%;
-          transform: translate(-50%,-50%);
            width: 422px;
-          height: 255px; text-align: center;
+          height: 255px; text-align: center; margin: 0 auto;
           
           span {
             color: #fff; font: bold 70px/0.5 "Noto Serif Display";
@@ -26,28 +45,29 @@ header {
         }
 
         #gnb {
-          display:inline-block; position: absolute; bottom: 30%; left: 50%;
-          transform: translate(-50%,80%); width: fit-content;
-   
+          display:flex; justify-content: center;
             li {
-              float: left; transition: 0.5s; 
-    
+              padding: 16px 30px; position: relative; overflow: hidden;
+
               a {
-                display: inline-block; padding: 16px 30px;
                 font: bold 20px/1 "Baloo 2"; color: #fff;
               }
-    
-              &.on {
-                color: #51402f;
-              }
 
-              &:hover {transform: rotate(10deg);}
+              &::after {
+                content: ""; display: block;  width: 100%; border-bottom: 2px solid #fff;
+                transform: translateX(-110%); position: absolute; bottom: 8px; left: 0; 
+              }
+              &:hover {
+                &::after {
+                  transform: translateX(110%); transition: transform 0.7s ease-in-out;
+                }
+              }
           }
         }
 
-        >a {
-          position: absolute; top: 30px; right: 40px; box-sizing: border-box;
-          width: 30px; height: 30px;  display: none;
+        .menuBtn {
+          position: fixed; top: -170px; right: 15px; box-sizing: border-box;
+          width: 20px; height: 20px;  display: none; cursor: pointer;
 
           &::before {
             content: "";
@@ -71,17 +91,17 @@ header {
       }
       
       #gnbMo {
-        width: 100%;  position: absolute; top: 0px; text-align: center; right: -100%;
-        display: block;
+        width: 100%; height: 100vh;  position: absolute; top: 0px; text-align: center; right: -100%;
+        display: block; 
         li {
-          width: 100%; padding: 15px; background-color:#b2b2a2;
+          width: 100%; height: calc(100vh / 7); background-color:#b2b2a2;
           transition: 0.5s;
           a {
-            font: normal 24px "Baloo 2"; color: #fff;
+            font: normal 20px/calc(100vh / 7) "Baloo 2"; color: #fff;
           }
 
           &:nth-of-type(1) {
-            padding-top: 30px; 
+            padding-top: 20px; 
             img {
               height: 60px; 
             }
@@ -94,14 +114,68 @@ header {
           }
 
           &:nth-of-type(8) {
-            width: 30px; height: 30px; padding: 0;  position: absolute; top: 30px; right: 30px;
+            width: 30px; height: 30px; padding: 0;  position: absolute; top: 10px; right: 40px;
              a {
                 color: #fff; cursor: pointer; 
              }
              &:hover {background-color: #b2b2a2;}
           }
         }
+        &.yes {
+          right: 0%;
+        }
+        &.no {
+          right: -100%;
+        }
+      }
 
+      #popup {
+        width: 100%; height: 100vh; background: rgba(0,0,0,0.7); position: absolute;
+        top: 0; left: 0; opacity: 0; z-index: -1;
+
+        .inner {
+          width: 320px; height: 350px; background: #b18857; position: absolute; top: 50%; left: 50%;
+          transform: translate(-50%,-50%); 
+
+          .content {
+            padding: 50px 13px 20px; color: #fff; position: relative;
+  
+            h1 {
+              margin:10px 0 20px; font: bold 25px/1 "Baloo 2"; text-align: center;
+              letter-spacing: 1px; position: relative;
+  
+              &::after {
+                content: ""; display: block; width: 18%; 
+                border-bottom: 2px solid #fff; position: absolute; bottom: -6px; left: 80px;
+              }
+            }
+            span {
+              font: normal 15px/1.5 "Baloo 2"; width: 97%; margin: 0 auto;
+              text-align: center;
+            } 
+            .closeBtn {
+              position: absolute; top: 20px; right: 20px; cursor: pointer;
+              font: normal 14px/1 "Baloo 2"; letter-spacing: 1px; 
+            }
+          }
+          >.wrap {
+            margin: 40px auto 0;
+            input[type=checkbox]{
+              width: 15px; height: 15px;
+            }
+            label {
+              color: #fff; margin-left: 17px; font: normal 14px/1 "Baloo 2";
+              cursor: pointer;
+            }
+          }
+        }
+
+        &.on {
+          opacity: 1; z-index: 100;
+        }
+        &.off{
+          opacity: 0; display: none;
+        }
         
       }
     }
@@ -214,22 +288,7 @@ header {
   
 }
   @media screen and (max-width: 1179px){
-    header {
-      
-      >.inner {
-        max-width: 100%; 
-        
-        .wrap {
-          max-width: 1200px; height: 700px;  position: relative;
-          h1 {
-            transform: translate(-50%,-50%) scale(0.8,0.8); transition: 1s;
-          }
-          
-        }
-      }
     
-    }
-  
   footer {
       height: 1500px;
       .inner {
@@ -237,7 +296,7 @@ header {
         height: 100%;
         h3 {
           position: absolute; margin-top: 0px; left: 50%; transform: translateX(-50%); 
-          text-align: center; width: 100%;  font-size: 50px; display: block;
+          text-align: center; width: 100%;  font-size: 40px; display: block;
         }
         .line {
           position: absolute; left: 50%; width: 80%; height: 1px;
@@ -249,7 +308,7 @@ header {
           text-align: center; transform: translateX(-50%); 
         }
         .wrap {
-          position: absolute; width: 80%; left: 50%; transform: translateX(-47%); 
+          position: absolute; width: 470px; left: 50%; transform: translateX(-47%); 
           top: 18%;
           li {
             width: 48%; height: 201px; float: left; 
@@ -328,22 +387,27 @@ header {
   @media screen and (max-width: 960px){
     header {
       >.inner {
-        max-width: 100%; height: 70vh;
+        max-width: 100%; 
         
         .wrap {
-          width: 100%; height: 100%;  position: relative;
+          transform: translateY(-200%);
           h1 {
-            transform:scale(1,1) translate(-50%,-50%); transition: 1s; 
+            width: 322px;
+            a {
+              span {
+                font: bold 50px/0.5 "Noto Serif Display";
+              }
+            }
           }
-          >a {display: block;}
+          .menuBtn {display: block; top: -198px; right: 45px;}
           #gnb {
             display:none;
           }
           
         }
         
-        .yes { display: none;}
-        .no { right: 0%;}
+        .yes { display: none;z-index: 11;}
+        .no { right: 0%; }
       }
     
     }

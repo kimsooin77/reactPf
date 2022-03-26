@@ -15,7 +15,7 @@
 
             #gnb {
                 display: flex;  width: 60%; position: absolute;
-                right: 100px; top: 15px; justify-content: space-between;
+                right: 2%; top: 15px; justify-content: space-between;
 
                 li {
                     padding: 20px;
@@ -24,9 +24,9 @@
                 }
             }
 
-            >a {
-                display: none; position: absolute; top: 30px; right: 50px;
-                width: 30px; height: 30px;
+            .menuBtn {
+                display: none; position: absolute; top: 20px; right: 30px;
+                width: 20px; height: 20px; cursor: pointer;
 
                 &::before {
                     content: "";
@@ -42,8 +42,8 @@
 
                 span {
                     display: block; text-indent: -99999px; position: absolute; top: 50%;
-                    left: 0;
-                    width: 100%; height: 1px; background: #000;
+                    left: 0; margin-top: -1px;
+                    width: 100%; height: 2px; background: #000;
                 }
 
             }
@@ -51,14 +51,49 @@
             
         }
 
-        #gnbMo{
-            display: none;
-        }
+        #gnbMo {
+            width: 100%; height: 100vh;  position: absolute; top: 0px; text-align: center; right: -100%;
+            display: block; z-index: 10;
+            li {
+              width: 100%; height: calc(100vh / 7); background-color:#b2b2a2;
+              transition: 0.5s;
+              a {
+                font: normal 20px/calc(100vh / 7) "Baloo 2"; color: #fff;
+              }
+    
+              &:nth-of-type(1) {
+                padding-top: 20px; 
+                img {
+                  height: 60px; 
+                }
+              }
+    
+              &:hover {
+                background-color: #585b49;
+    
+                &:nth-of-type(1) {background-color:#b2b2a2;}
+              }
+    
+              &:nth-of-type(8) {
+                width: 20px; height: 20px; padding: 0;  position: absolute; top: 10px; right: 40px;
+                 a {
+                    color: #fff; cursor: pointer; 
+                 }
+                 &:hover {background-color: #b2b2a2;}
+              }
+            }
+            &.show {
+              right: 0%;
+            }
+            &.hide {
+              right: -100%;
+            }
+          }
 
     }
 }
 
-@media screen and (max-width : 950px) {
+@media screen and (max-width : 1150px) {
     .subHead {
         width: 100%;
         .inner{
@@ -68,8 +103,8 @@
             .wrap {
                 width: 100%; position: relative;
                 h1 {
-                    width: 140px; height: 80px; position: absolute;
-                    top: 30px; left: 50px;
+                    width: 122px; height: 63px; position: absolute;
+                    top: 36px; left: 27px;
     
                     img {width: 100%; height: 100%;}
                 }
@@ -78,14 +113,12 @@
                     display: none;  
                 }
     
-                >a {
+                .menuBtn {
                     display: block;  top: 50px;
                 }
             }
     
-            #gnbMo{
-                display: none;
-            }
+        
     
         }
     }

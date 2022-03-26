@@ -63,22 +63,25 @@
             width: 330px; font: normal 16px/1.8 "Baloo 2";
             font-weight: 300; text-align: left; letter-spacing: 0.5px;
         }
-        .message
-        ,.phone {
-            margin-top: 30px; color: #000; font: normal 14px "Baloo 2";
-            font-weight: 300; 
-            i{
-                font-size: 23px; transform: translateY(5px);
-                color: rgba(88,91,73,1); margin-right: 20px;
+        .icons {
+            .message
+            ,.phone {
+                margin-top: 30px; color: #000; font: normal 14px "Baloo 2";
+                font-weight: 300; 
+                i{
+                    font-size: 23px; transform: translateY(5px);
+                    color: rgba(88,91,73,1); margin-right: 20px;
+                }
+            }
+            .message{position: absolute; top: 328px; left: 149px; }
+            .phone {position: absolute; top: 376px; left: 149px; }
+            >span {
+                position: absolute; top: 470px; left: 146px;
+                width: 303px; font: normal 14px/1.2 "Baloo"; letter-spacing: 1px;
+                color: rgba(179,163,149,1); text-align: left;
             }
         }
-        .message{position: absolute; top: 328px; left: 149px; }
-        .phone {position: absolute; top: 376px; left: 149px; }
-        >span {
-            position: absolute; top: 470px; left: 146px;
-            width: 303px; font: normal 14px/1.2 "Baloo"; letter-spacing: 1px;
-            color: rgba(179,163,149,1); text-align: left;
-        }
+        
         .p2 {
             position: absolute; top: 513px; left: 148px;
             width: 280px; font: normal 12px/1.8 "Baloo 2";
@@ -142,5 +145,172 @@
         }
         
     }
-    
+    .pop {
+        width: 500px; height: 250px; margin: 200px auto; box-shadow: 10px 10px 10px #d6cdaa;
+        z-index: 10; background-color: #e9e4d0; position: relative;
+        
+        h1 {
+            width: 100%; text-align: center; font: bold 25px/1.8 "Sans Serif";
+            position: absolute; top: 20%; color: #504037;
+        } 
+        .pic {
+            position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); 
+            font-size: 32px; color: rgba(177,136,87,.28);
+        } 
+        .close {
+            outline: none; border: none; color: #504037; background-color: inherit;
+            position: absolute; bottom: 20%; left: 50%; transform: translateX(-50%); cursor: pointer;
+            font: normal 15px/1 "Baloo 2"; transition: 0.5s; letter-spacing: 1px;
+
+            &:hover { color: #b18857;}
+        } 
+    }
 }
+
+@media screen and (max-width : 1500px) {
+    #join {
+      .topPic {
+        span {
+          left: 21%;
+        }
+      }
+    }
+  }
+
+@media screen and (max-width: 1179px){
+    #join{
+        width: 100%; height: 1630px;
+    
+        .topPic {
+            span { 
+              width: 65%; left: 50%; transform: translateX(-50%);
+              text-align: center; display: block;
+            }
+        
+            aside{
+                width: 700px; height: 160px; position: absolute; top: 40%; left: 50%; transform: translateX(-50%);
+                overflow: hidden; z-index: 3;
+        
+                .top {
+                    width: 33%;  height: 1px; background: #fff;
+                    position: absolute; top: 0; right: 0px;
+                }
+                .right {
+                    width: 1px; height: 100%; background: #fff;
+                    position: absolute; top: 0; right: 0;
+                }
+                .bottom {
+                    width: 100%; height: 1px; background: #fff;
+                    position: absolute; bottom: 0; right: 0;
+                }
+                .left {
+                    width: 1px; height: 100%; background: #fff;
+                    position: absolute; bottom: 0; left: 0;
+                }
+                .topLeft {
+                    width: 33%;
+                    height: 1px; background: #fff; position: absolute; top: 0; left: 0;
+                }
+            }
+        }
+    
+        .inner {
+            width: 800px; margin: 100px auto; position: relative;
+    
+            .pic {
+                position: absolute; left: 603px; top: 230px;
+                width: 1612px; height: 668px; opacity: 0.05;
+                background-image: url(/public/img/began_bg.png);
+                background-size: cover; background-repeat: no-repeat;
+            }
+            h2 {
+                width: 90%; margin: 0 auto;
+                position: relative; top: auto; left: auto; text-align: center;
+            }
+            .p1{
+                position: relative; top: auto; left: auto; margin-top: 0px;
+                width: 70%; margin: 20px auto; text-align: center;
+            }
+            .icons{
+                width: 70%; margin: 0 auto;
+                .message
+                ,.phone {
+                    margin-top: 20px; 
+                }
+                .message{position: relative; top: auto; left: auto; margin-right: 57px;}
+                .phone {position: relative; top: auto; left: auto; }
+                >span {
+                    position: relative; top: auto; left: auto;
+                    width: 303px; text-align: left; display: block; margin-top: 20px;
+                }
+            }
+            
+            .p2 {
+                position: relative; top: auto; left: auto;
+                width: 70%; margin: 20px auto;
+            }
+            form {
+                width: 80%; position: relative; right: auto; top: auto; 
+                margin: 35px auto; text-align: center;
+            }
+            
+        }
+        .pop { margin: -600px auto;}
+    }
+}
+
+@media screen and (max-width : 780px) {
+    #join{
+        width: 100%; height: 1850px;
+    
+        .topPic {
+            
+    
+            p {
+                position: relative; margin: 0 auto; text-align: center; padding-top: 107px;
+                color: #fff; top: auto; left: auto; transform: translateX(0%);
+                
+            }
+
+        
+            aside{ display: none; }
+          }
+    
+        .inner {
+            width: 450px; margin: 100px auto; position: relative;
+            form {
+                table {
+                    td {
+                        input[type=checkbox] {
+                            margin-right: 44px;
+                        }
+                    }
+                }
+            }
+    
+            .pic {
+                position: absolute; left: 603px; top: 230px;
+                width: 1612px; height: 668px; opacity: 0.05;
+                background-image: url(/public/img/began_bg.png);
+                background-size: cover; background-repeat: no-repeat;
+            }
+            h2 {
+                font: bold 30px/1.5 "Noto Serif Display";
+            }
+            .icons{
+                .phone {display: block;}
+                
+            }
+        }
+        .pop {
+            width: 300px;
+            h1 {
+                font: bold 20px/1.8 "Sans Serif";
+            }
+        }
+    }
+}
+
+
+
+

@@ -8,6 +8,8 @@ import HeaderSub from './components/common/HeaderSub.js';
 import Visual from './components/main/Visual.js';
 import Info from './components/main/Info.js';
 import Commend from './components/main/Commend.js';
+import Commu from './components/main/Commu.js';
+import Intro from './components/main/Intro.js';
 import Bigan from './components/main/Bigan.js';
 import Service from './components/main/Service.js';
 import Book from './components/main/Book.js';
@@ -18,6 +20,8 @@ import Youtube from './components/sub/Youtube.js';
 import Join from './components/sub/Join.js';
 import Department from './components/sub/Department.js';
 import Location from './components/sub/Location.js';
+
+
 import { useEffect, useRef } from 'react';
 
 
@@ -50,6 +54,8 @@ function App() {
             <Visual />
             <Info />
             <Commend />
+            <Commu />
+            <Intro />
             <Bigan />
             <Service />
             <Book />
@@ -63,7 +69,6 @@ function App() {
           <Route exact path="/department" component={Department}></Route>
           <Route exact path="/location" component={Location}></Route>
           
-
           <Footer />
     </div>
   );

@@ -1,123 +1,202 @@
-import Anime from '../class/anime.js';
-import { useEffect, useReducer, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTree } from "@fortawesome/free-solid-svg-icons";
+import { faUserGroup } from "@fortawesome/free-solid-svg-icons";
+import { faTruckPickup } from "@fortawesome/free-solid-svg-icons";
+import { faSnowplow } from "@fortawesome/free-solid-svg-icons";
+import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
+import { faPagelines } from "@fortawesome/free-brands-svg-icons";
+import axios from "axios";
+import textBox from './DepartmentInfo.js';
 
 function Department() {
+    const depart = useRef(null);
     const path = process.env.PUBLIC_URL;
-    const titPic = `${path}/img/titPic.png`;
-    const furniturePic1 = `${path}/img/departmentPic1.jpg`;
-    const furniturePic2 = `${path}/img/departmentPic2.jpg`;
-    const human1 = `${path}/img/departmentPic3.jpg`;
-    const human2 = `${path}/img/departmentPic4.jpg`;
-    const human3 = `${path}/img/departmentPic5.jpg`;
-    const human4 = `${path}/img/departmentPic6.jpg`;
-    const top = useRef(null);
-    const right = useRef(null);
-    const bottom = useRef(null);
-    const left = useRef(null);
+    const mainPic = `${path}/img/mainPic.png`;
+    const middlePic = `${path}/img/middlePic.png`;
+
+    const partner1 = `${path}/img/partner1.png`;
+    const partner2 = `${path}/img/partner2.png`;
+    const partner3 = `${path}/img/partner3.png`;
+    const partner4 = `${path}/img/partner4.png`;
+    const partner5 = `${path}/img/partner5.png`;
+    const partner6 = `${path}/img/partner6.png`;
     const pop = useRef(null);
-    const topLeft = useRef(null);
     const frame = useRef(null);
+    
 
-    useEffect(()=>{
-        // window.addEventListener("road", test);
-        
-        // return () => {
-        //     window.removeEventListener("road", test);
-        // }
-    },[])
+    const [number, setNumber] = useState(0);
+    const [members, setMembers] = useState([]);
+    const [isClicked, setisClicked] = useState(false);
+    const [years, setYears] = useState(textBox);
+    const dots = useRef(null);
 
-    function test() {
-        pop.getComputedStyle.display = 'block';
+    const handleMotion = (number) => {
+        setisClicked(false)
+        const btns = dots.current.querySelectorAll("li")
 
-
-        new Anime(top.current, {
-            prop : "width",
-            value : "100%",
-            duration: 500,
-            callback : () => {
-                new Anime(right.current, {
-                    prop : "width",
-                    value : "100%",
-                    duration : 500,
-                    callback : () => {
-                        new Anime (bottom.current, {
-                            prop : "width",
-                            value : "100%",
-                            duration : 500,
-                            callback : () => {
-                                new Anime(left.current, {
-                                    prop: "height",
-                                    value : "100%",
-                                    duration : 500
-                                })
-                            }
-                        })
-                    }
-                })
-            }
-        })
+        for(let btn of btns) btn.classList.remove("on")
+            btns[number].classList.add("on");
+            
+        if( number === 0) {
+            setisClicked(true)
+        }
+        if ( number === 1){
+            setisClicked(true)
+        }
+        if (number === 2 ){
+            setisClicked(true)
+        }
+        if(number === 3) {
+            setisClicked(true)
+        }
+        if(number === 4) {
+            setisClicked(true)
+        }
     }
 
+    useEffect(() => {
+        setNumber(0)
+        handleMotion(0)
+    },[])
+
+    useEffect(() => {
+        axios
+        .get(`${path}/db/departments.json`)
+        .then(json => {
+            setMembers(json.data.data)
+        });
+    },[])
+    
+
     return(
-        <div id="department">
-                <div className="topPic">
-                    <aside ref={pop}>
-                        <div className="top" ref={top}></div>
-                        <div className="right" ref={right}></div>
-                        <div className="bottom" ref={bottom}></div>
-                        <div className="left" ref={left}></div>
-                        <div className="topLeft" ref={topLeft}></div>
-                    </aside>
+        <div id="department" ref={depart}>
+            <div className="topPic">
+                <aside ref={pop}>
+                    <div className="top"></div>
+                    <div className="right" ></div>
+                    <div className="bottom" ></div>
+                    <div className="left"></div>
+                    <div className="topLeft"></div>
+                </aside>
                         
-                        <p>Department</p>
-                        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, doloribus!</span>
+                <p>Department</p>
+                <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, doloribus!</span>
+            </div>
+
+            <div className="inner" ref={frame}>
+                <div className="contents">
+                    <div className="teamInfo">
+                        MEET OUR TEAM 
+                        <div className="pic">
+                            <FontAwesomeIcon icon={faPagelines} />
+                        </div>
+                    </div>
+                    
+                    <section className="peoples scrollOn">
+                        {
+                            members.map((item,index) => {
+                                return(
+                                    <article key={index} className="human">
+                                        <img src={`${path}/img/${item.imgSrc}`} />
+                                        <span>{item.name}</span>
+                                    </article>
+                                )
+                            })
+                        }
+                    </section>
+                </div>
+                
+                <div className="title">
+                    <div className="pic">
+                        <FontAwesomeIcon icon={faPagelines} />
+                    </div>
+                    <h1>OUR STORY</h1>
+                    
+                    <div className="storyBox">
+                        <section className="boxIn">
+                            <div className="txtBox">
+                                <div className="wrap"> 
+                                    {
+                                        isClicked
+                                        ?
+                                        years.map((year,index) => {
+                                            return(
+                                                <article className={number === index ? "show" : null} key={index}>
+                                                    <strong>{ years[index].year }</strong>  
+                                                    <span>{ years[index].content }</span>
+                                                </article>
+                                            )
+                                        })
+                                        :
+                                        null
+                                    }
+                                    
+                                </div>
+                                
+                            </div>
+                            <div className="years">
+                                <ul className="dot" ref={dots}>
+                                    <li onClick={() => {
+                                        setNumber(0)
+                                        handleMotion(0)
+                                        }}><FontAwesomeIcon icon={faTree} /></li>
+                                    <li onClick={() => {
+                                        setNumber(1)
+                                        handleMotion(1)
+                                        }}><FontAwesomeIcon icon={faUserGroup} /></li>
+                                    <li onClick={() => {
+                                        setNumber(2)
+                                        handleMotion(2)
+                                        }}><FontAwesomeIcon icon={faScrewdriverWrench} /></li>
+                                    <li onClick={() => {
+                                        setNumber(3)
+                                        handleMotion(3)
+                                        }}><FontAwesomeIcon icon={faSnowplow} /></li>
+                                    <li onClick={() => {
+                                        setNumber(4)
+                                        handleMotion(4)
+                                        }}><FontAwesomeIcon icon={faTruckPickup} /></li>
+                                </ul>
+                                <strong>1957</strong>
+                                <strong>1971</strong>
+                                <strong>1988</strong>
+                                <strong>1995</strong>
+                                <strong>2016</strong>
+                            </div>
+                            <div className="mainPic">
+                                <img alt="mainPic" src={mainPic} />
+                            </div>
+                        </section>
+                    </div>
                 </div>
 
-            <div className="inner">
-                <div className="title">
-                    <h1>OUR STORY</h1>
-                    <span>We're so happy you have landed here!</span>
+                <section className="partners">
+                    
+                    <h1>PARTNERS</h1>
                     <div className="line"></div>
                     <div className="titPic">
-                        <img src={titPic} />
-                    </div>
-                    <p>Write Burn is founded on belief in the power of letting go to make space to manifest your desires. Our mission is to inspire intentional living through the practice of releasing and inviting so that you can harness your powers of creation. If you are ready to let go, move on, and manifest the life you want - you're in the right place.</p>
-                </div>
-
-                <div className="contents">
-                    <div className="wrap">
-                        <div className="furniture1">
-                            <img src={furniturePic1} />
-                        </div>
-                        <p className="p1">We are a community of lifestyle creatives who inspire beautiful everyday moments by delivering the dreamiest home tours, motivational interviews, tips for intentional living and advice for creatives.</p>
-                        <div className="verticalLine"></div>
-                        <div className="furniture2">
-                            <img src={furniturePic2} />
-                        </div>
-                        <p className="p2">If you’ve found your way here, you’re most likely a lifestyle creative, business owner, inspiration seeker or simply aspire to live beautifully everyday. Living a beautiful life stretches far beyond a perfectly styled shelf or a gorgeously set table… it comes from being intentional in anything and everything that makes you excited about life.</p>
-                    </div>
-                    <div className="departmentBg"></div>
-                    <p className="teamInfo">MEET OUR TEAM!</p>
-                    <div className="peoples">
-                        <div className="human1">
-                            <img src={human1} />
-                            <span>Robert Joe</span>
-                        </div>
-                        <div className="human2">
-                            <img src={human2} />
-                            <span>Michale</span>
-                        </div>
-                        <div className="human3">
-                            <img src={human3} />
-                            <span>Ryan Gosling</span>
-                        </div>
-                        <div className="human4">
-                            <img src={human4} />
-                            <span>Domhnall</span>
+                        <div className="pic">
+                            <FontAwesomeIcon icon={faPagelines} />
                         </div>
                     </div>
-                </div>
+                    <ul className="partner">
+                        <li><img src={partner1} alt="" /></li>
+                        <li><img src={partner2} alt="" /></li>
+                        <li><img src={partner3} alt="" /></li>
+                        <li><img src={partner4} alt="" /></li>
+                        <li><img src={partner5} alt="" /></li>
+                        <li><img src={partner6} alt="" /></li>
+                    </ul>
+                </section>
             </div>
+
+            <section className="middleContent">
+                <img alt="middlePic" src={middlePic} />
+                <h1>We Buy Red Pine Poles, Softwood, Hardwood & Standing Timber!</h1>
+                <span>Call now! (123) 456-7890</span>
+            </section>
         </div>
     )
 }

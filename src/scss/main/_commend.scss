@@ -1,6 +1,6 @@
 #commend {
     padding: 20px 0;
-    width: 100%; height: 680px; 
+    width: 100%;  
     background-color: rgba(243,242,237,1);
 
     .inner  {
@@ -11,8 +11,7 @@
         background-size: cover; position: relative;
 
         .wrap {
-            position: absolute;
-            top: 172px; left: 86px; 
+            margin: 100px; width: 70%;
 
             >h1 {
                 color: #fff;
@@ -53,46 +52,24 @@
 
 @media screen and (max-width: 1179px){
     #commend {
+        padding: 20px 0;
+        width: 100%;  
+        background-color: rgba(243,242,237,1);
+    
         .inner  {
+            width: 100%; 
+    
             .wrap {
-                position: absolute; transform:scale(0.8,0.8);
-                top: 172px; left: 16px; transition: 1s;
+                margin: 45px; width: 85%;
+    
+                >h1 {
+                    font: bold 45px/1.8 "Noto Serif Display";
+                }
             }
         }
     } 
 }
 
 @media screen and (max-width: 960px){
-    #commend {
-        .inner  {
-            width: 100%; height: 660px;
-            .wrap {
-                position: absolute; transform:scale(1,1);
-                top: 72px; left:50%; transition: 1s; margin: 0 auto;
-                width: 100%; transform: translateX(-50%);
-
-                >h1 {
-                    color: #fff; width: 80%;
-                    font: bold 55px/1.6 "Noto Serif Display";
-                    text-align: center; margin: 0 auto;
-
-                    &::after {width: 80%; margin: 20px auto;}
-                }
-                p {
-                    width: 80%; margin: 0 auto;
-                    display: block; line-height: 1.7;
-                    text-align: center;
-                }
-                a {
-                    display: block; transition: 0.5s;
-                    width: 256px; margin: 30px auto;
-                
-                    &:hover {
-                        background-color: rgba(179,163,149,1);
-                        border: rgba(179,163,149,1);;
-                    }
-                }
-            }
-        }
-    } 
+    
 }

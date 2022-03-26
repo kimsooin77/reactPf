@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useState } from "react";
+import axios from "axios";
 
 function Location() {
     const top = useRef(null);
@@ -15,35 +16,47 @@ function Location() {
     const [index, setIndex] = useState(0);
     const [map, setMap] = useState(null);
     const [toggle, setToggle] = useState(false);
+    const [places,setPlaces] = useState([]);
+    const path = process.env.PUBLIC_URL;
+
     
     const info = [
         {
-          title : "본점", 
-          latlng : new kakao.maps.LatLng(37.5132313,127.0594368),
-          //public폴더 안쪽의 절대경로와 이미지 주소 연결
+          title : "LA", 
+          latlng : new kakao.maps.LatLng(37.3933466,126.6446259),
           imgSrc : process.env.PUBLIC_URL+"/img/marker1.png", 
-          imgSize : new kakao.maps.Size(232, 99),
+          imgSize : new kakao.maps.Size(170, 99),
           imgPos : {offset: new kakao.maps.Point(116, 99)}
         },
         {
-          title : "지점1", 
-          latlng : new kakao.maps.LatLng(37.507099899564444,126.75639338893572),
+          title : "San Francisco", 
+          latlng : new kakao.maps.LatLng(37.5842897,127.1359799),
           imgSrc : process.env.PUBLIC_URL+"/img/marker2.png", 
-          imgSize : new kakao.maps.Size(232, 99),
+          imgSize : new kakao.maps.Size(170, 99),
           imgPos : {offset: new kakao.maps.Point(116, 99)}
         },
         {
-          title : "지점2", 
-          latlng : new kakao.maps.LatLng(35.17422705914147,129.10766665201712),
+          title : "NEW YORK", 
+          latlng : new kakao.maps.LatLng(37.6666482,127.0412337),
           imgSrc : process.env.PUBLIC_URL+"/img/marker3.png", 
-          imgSize : new kakao.maps.Size(232, 99),
+          imgSize : new kakao.maps.Size(170, 99),
           imgPos : {offset: new kakao.maps.Point(116, 99)}
         }
       ];
+      
 
-      const [mapInfo] = useState(info);
+    const [mapInfo] = useState(info);
 
     useEffect(() => {
+        axios
+            .get(`${path}/db/locationInfo.json`)
+            .then(json => {
+                setPlaces(json.data.data);
+            });
+    },[])
+
+    useEffect(() => {
+        container.current.innerHTML="";
         const options = {
             center: mapInfo[index].latlng, 
             level: 3 
@@ -70,13 +83,15 @@ function Location() {
         btnBranch.current.children[index].classList.add("on");
 
         const mapSet = () => map.setCenter(mapInfo[index].latlng);
-
         window.addEventListener("resize", mapSet);
 
-        return () => window.removeEventListener("resize", mapSet);
+        return () => {
+            window.removeEventListener("resize", mapSet);
+        }
 
     },[index]);
 
+    
     return(
         <div id="location">
             <div className="topPic">
@@ -92,6 +107,21 @@ function Location() {
                 <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, doloribus!</span>
             </div>
             <div className="inner">
+
+            <div className="txtBox">
+                {
+                    places.map((item,index) => {
+                        return(
+                            <article key={index}>
+                                <h1>{item.title}</h1>
+                                <p>{item.address}</p>
+                                <p>{item.num}</p>
+                                <span>{item.email}</span>
+                            </article>
+                        )
+                    })
+                }
+                </div>
                 
                 <div id="map" ref={container}></div>
                 <div className="wrap">
@@ -109,7 +139,19 @@ function Location() {
                     </ul>
                 </div>
                 
-                <ul className="traffic">
+                <div className="btns">
+                    <ul className="branch" ref={btnBranch}>
+                        <li onClick={() => {
+                            setIndex(0);
+                        }}>LA</li>
+                        <li onClick={() => {
+                            setIndex(1);
+                        }}>San Francisco</li>
+                        <li onClick={() => {
+                            setIndex(2);
+                        }}>NEW YORK</li>
+                    </ul>
+                    <ul className="traffic">
 
                     {
                         toggle ?
@@ -126,22 +168,9 @@ function Location() {
                                 setToggle(!toggle);
                             }}>View Traffic Info</li>  
                     }
-                    
-                </ul>
 
-                <ul className="branch" ref={btnBranch}>
-                    <li onClick={() => {
-                        setIndex(0);
-                    }}>HEAD</li>
-                    <li onClick={() => {
-                        setIndex(1);
-                    }}>BRANCH1</li>
-                    <li onClick={() => {
-                        setIndex(2);
-                    }}>BRANCH2</li>
-                </ul>
-
-                <p>It pays to plan ahead, you will always get our lowest prices online if you book more than 48 hours in advance. Tickets purchased online are non-refundable. With our flexible pricing, you can choose the day, price and plan that suits you best. To make a reservation for a group visit, please contact us directly.</p>
+                    </ul>
+                </div>
             </div>
         </div>
     )

@@ -13,7 +13,7 @@
     }
     span {
         position: absolute; font: normal 25px "Cardo";
-        color: #FFF;top: 54%; left: 47%;
+        color: #FFF;top: 54%; right: 4%;
     }
 
     aside{
@@ -42,106 +42,228 @@
         }
     }
   }
-  .inner {
-      position: relative; padding: 40px 0; width: 1180px; margin: 0 auto;
+  >.inner {
+      position: relative; padding: 130px 0; width: 1180px; margin: 0 auto;
       h1 {
-        padding: 30px 15px;  position: absolute; width: 100%;
-        a {
+          width: 100%; text-align: center; margin-bottom: 55px;
           font: bold 40px/1.8 "Noto Serif Display";
-           color: rgba(88,91,73,1); letter-spacing: 1px;
+          color: rgba(88,91,73,1); letter-spacing: 1px;
+      }
+      
+      
+      .boxes {
+        width: 90%; margin: 0 auto; border-top: 2px solid #585b49; height: 118px;
+
+        .titPic {
+            padding: 0 10px; transform: translateY(-28px); font-size: 32px; text-align: center; color: #585b49;
+            width: 72px; height: 51px; margin: 0 auto; background-color: rgba(243,242,237,1);
+            img {width: 100%; height: 100%;}
         }
-      }
-      span{
-          display: block; position: absolute; top: 150px; left: 20px;
-          font: normal 18px/1.8 "Baloo 2"; width: 38%;
-          text-align: center; font-weight: 300; 
-      }
-      .line2 {
-          position: absolute; top: 250px; left: 230px;
-          width: 713px; height: 2px;  background-color: #585b49;
-      }
-      .titPic {
-          padding: 0 10px;
-          width: 72px; height: 51px; margin: 0 auto; background-color: rgba(243,242,237,1);
-          position: absolute; top: 228px; left: 50%; transform: translateX(-50%);
-          img {width: 100%; height: 100%;}
-      }
+        .tagBox {
+          width: 50%; float: left; 
 
-      ul{
-        width: 100%; margin-top: 280px;
-        
-        .item {
-          width: 33.333%; float: left; padding: 20px; 
+          .inner {
+            width: 100%;
+            button {
+              outline: none; border: none; color: #fff; font: normal 12px/1 "Sans Serif";
+              padding: 12px 11px; margin: 0 7px 6px 0; text-align: center; background-color: #ab8e73;
+              cursor: pointer; transition: 0.5s;
 
-          >.inner {
-            width: 100%;  background-color: #b2b2a2; box-shadow: 5px 5px 10px rgba(0,0,0,.1); padding: 10px;
-  
-            .pic {
-              width: 100%;  margin-bottom: 10px; padding: 10px;
-  
-              img {
-                transition: 0.5s;
-                width: 100%; object-fit: cover; filter:sepia(80%);
-                
-                &:hover {filter:sepia(0%); }
-              }
-            }
-  
-            h2 {
-              text-align: center; padding-bottom: 10px;
-              font: bold 15px/1.2 "Baloo 2"; color: #fff;
+              &:hover {  background-color: #b3a395;}
+              &.on {background: #b3a395;}
             }
           }
         }
+        .searchBox {
+          width: 50%; text-align: right;float: right;
+
+          input {
+            background-color: #fff; border: none; outline: none; font: normal 13px/40px "Baloo 2";
+            padding: 10px; color: #000; font-weight: 300; height: 40px;
+          }
+          button {
+            margin-left: 20px; background: #ab8e73; color: #fff; font: normal 13px/40px "Baloo 2";
+            font-weight: 300; letter-spacing: 1.2px; text-align: center;
+            transition: 0.5s; outline: none; border: none; width: 100px; 
+ 
+            &:hover { background: #b3a395;}
+            
+          }
+
+        }
+      }
+      
+
+      .load { 
+        width: 200px; margin: 250px auto; position: relative; 
+
+        .circle {
+          width: 20px; height: 20px; position: absolute; border-radius: 50%;
+          background: #fff; left: 15%; transform-origin: 50%; animation: circle 0.5s alternate infinite ease;
+        
+          &:nth-of-type(2) {
+            left: 45%; animation-delay: 0.2s;
+          }
+          &:nth-of-type(3) {
+            left: auto; right: 15%; animation-delay: 0.3s;
+          }
+        }
+        
+        .shadow {
+          width: 20px; height: 4px; border-radius: 50%; background: rgba(0,0,0,0.5);
+          position: absolute; top: 62px; left: 15%; animation: shadow 0.5s alternate infinite ease;
+        
+          &:nth-of-type(4) {
+            left: 45%; animation-delay: 0.2s;
+          }
+          &:nth-of-type(5) {
+            left: auto; right: 15%; animation-delay: 0.3s;
+          }
+        }
+        
+        span {
+          font: bold 20px/20px "Baloo 2"; letter-spacing: 12px; top: 85px;
+          left: 15%; position: absolute;
+        }
+
+      }
+      .list{
+        width: 100%;  min-height: 2090px; opacity: 0;
+        transform: translateY(200px); transition: 1s;
+        &.on {
+          opacity: 1; transform: translateY(0px);
+        }
+        .frame {
+          width: 100%;
+
+          .item {
+            width: 33.33%; float: left; padding: 20px; 
+  
+            >.inner {
+              width: 100%;  background-color: #b2b2a2; box-shadow: 5px 5px 10px rgba(0,0,0,.1); padding: 10px;
+    
+              .pic {
+                width: 100%;  margin-bottom: 10px; padding: 10px;
+    
+                img {
+                  transition: 0.5s;
+                  width: 100%; object-fit: cover; filter:sepia(60%);
+                  
+                  &:hover {filter:sepia(0%); }
+                }
+              }
+    
+              h2 {
+                text-align: center; padding-bottom: 10px;
+                font: bold 15px/1.2 "Baloo 2"; color: #fff;
+              }
+            }
+          }
+        }
+        
       }
   }
   
     .pop {
-      width: 100%; height: 100vh; position: fixed; top: 0px; left: 0px; background: rgba(0,0,0,.9); padding: 5vw;
-  
+      width: 100%; height: 100vh; position: fixed; top: 0px; left: 0px; background:rgba(0,0,0,0.8); padding: 5vw;
+      z-index: 100;
       img {
         width: 100%; height: 95%; object-fit: contain; margin-bottom: 15px;
       }
       p {
-        font: 14px/1.2 "arial"; color: #fff;
+        font: bold 20px/1.2 "Baloo 2"; color: #fff;
         text-align: center;
       }
     
       span {
-        font: bold 14px/1 "arial"; color: #fff;
+        font: bold 16px/1 "Sans Serif"; color: #fff;
         position: absolute; top: 3vw; right: 5vw;
         cursor: pointer;
+
+        &:hover {
+          color: #b18857;
+        }
       }
     }
   }
   
+  @keyframes circle {
+    0% {
+      top: 60px; height: 5px; border-radius: 50px 50px 25px 25px;
+      transform: scaleX(1.7);
+    }
+    40% {
+      height: 20px; border-radius: 50%; transform: scaleX(1);
+    }
+    100% {
+      top: 0%;
+    }
+  }
+  @keyframes shadow {
+    0% {
+      transform: scaleX(1.5);
+    }
+    40% {
+      transform: scaleX(1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scaleX(0.2);
+      opacity: 0.4;
+    }
+  }
   @media screen and (max-width: 1179px){
     .gallery {
-      .inner {
-        ul {
-          .item {width: 33.333%!important;}
-        }
-      }
-    }
-  }
-  
-  @media screen and (max-width: 739px){
-    .gallery {
-      .inner {
-        ul {
-          .item {width: 50%;}
 
-        }
+      .topPic {
+        p { right: 5%;}
+      }
+
+      .inner {
+          width: 900px; 
+            .list {
+              .frame {
+                .item {
+                  width: 50%;
+                }
+              }
+            }
       }
     }
   }
   
-  @media screen and (max-width: 479px){
+  @media screen and (max-width: 916px){
     .gallery {
+
+      .topPic{
+        aside {display: none;}
+        p { width: 100%; top: 45%; text-align: center;}
+        span {width: 90%; top: 53%; text-align: center;}
+      }
       .inner {
-        ul {
-          .item {width: 100%!important;}
+        width: 450px;
+
+        h1 {margin-left: 0;}
+        span {margin-left: 0; width: 100%;}
+        
+        .boxes {
+          .tagBox {
+            width: 100%; float: none; text-align: center;
+          } 
+          .searchBox {
+            width: 100%; float: none; text-align: center; margin: 20px 0;
+          }
         }
+        .line {width: 100%;}
+          .list {
+            margin-top: 50px;
+            .frame {
+              .item {
+                width: 100%;
+              }
+            }
+          }
       }
     }
   }
+  

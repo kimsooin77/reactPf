@@ -1,0 +1,42 @@
+#intro {
+    width: 100%; background-color: #f3f2ed;
+    .inner {
+        width: 1200px; margin: 0 auto; text-align: center;
+        padding: 70px 0 90px;
+
+        h2 {
+            font: bold 45px/1.8 "Noto Serif Display"; color: #585b49;
+        }
+        .vidBox {
+            margin-top: 30px;
+            img {
+                margin: 20px;
+
+                &:nth-of-type(1),
+                &:nth-of-type(2) { width: 500px;}
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1179px){
+    #intro {
+        .inner {
+            width: 800px; 
+        }
+    }
+}
+
+@media screen and (max-width: 960px){
+    #intro {
+        .inner {
+            width: 90%; 
+            .vidBox {
+                img {
+                   &:nth-of-type(1),
+                   &:nth-of-type(2) { width: 320px;}
+                }
+            }
+        }
+    }
+}

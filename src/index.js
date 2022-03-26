@@ -2,13 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter } from 'react-router-dom';
 import App from './App';
+import {Provider} from 'react-redux';
+import store, {Persistor} from './redux/store.js';
+import {PersistGate} from 'redux-persist/integration/react';
 
 
 ReactDOM.render(
   <React.StrictMode>
       <HashRouter>
-        <App />
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={Persistor}>
+            <App />
+          </PersistGate>
+        </Provider>
       </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
+/*
+
+export const setYoutube = data => {
+  return {
+    type : 'SET_YOUBUE',
+    payload : data
+  }
+}
+ */

@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandsClapping } from "@fortawesome/free-solid-svg-icons";
 
 function Join() {
     const top = useRef(null);
@@ -30,13 +32,6 @@ function Join() {
         setVal({...val, [name] : value});
     }
 
-    const handleSubmit = e =>{
-        e.preventDefault();
-
-        setIsSubmit(true);
-        setErr(check(val));
-    }
-
     const handleCheck = e => {
         const {name} = e.target;
         const ischeck = e.target.checked;
@@ -46,7 +41,14 @@ function Join() {
     const handleSelect = e => {
         const {name} = e.target;
         const isSelected = e.target.options[e.target.selectedIndex].value;
-        setVal({...val,[name] : isSelected});
+        setVal({...val, [name] : isSelected});
+    }
+
+    const handleSubmit = e =>{
+        e.preventDefault();
+
+        setIsSubmit(true);
+        setErr(check(val));
     }
 
     const check = val => {
@@ -114,14 +116,15 @@ function Join() {
                 </div>
                 <h2>REQUEST A CUSTOM PIECE</h2>
                 <p className="p1">We can't wait to hear more about your vision! We'll send you in an email within a few business days with a quote to get started.</p>
-                <a href="#" className="message"><i className="fas fa-envelope"></i>blgwoodnash@gmail.com</a>
-                <a href="#" className="phone"><i className="fas fa-phone-alt"></i>847-767-2126</a>
-                <span>PAYMENT & CANCELLATION POLICIES</span>
+                <div className="icons">
+                    <a href="#" className="message"><i className="fas fa-envelope"></i>blgwoodnash@gmail.com</a>
+                    <a href="#" className="phone"><i className="fas fa-phone-alt"></i>847-767-2126</a>
+                    <span>PAYMENT & CANCELLATION POLICIES</span>
+                </div>
+               
                 <p className="p2">
                 We require a 50% deposit to start production on a piece, which is non-refundable. Remaining balance is due upon delivery or pickup. You may cancel your piece at any time, but once production has started we cannot use your deposit towards another piece as the materials and supplies have already been purchased. 
                 </p>
-
-               {success ? <div>Thanks!</div> : null} 
 
                 <form onSubmit={handleSubmit}>
                     <fieldset>
@@ -243,7 +246,7 @@ function Join() {
                                         <input 
                                         type="radio" 
                                         name="gender" 
-                                        id="femaile" 
+                                        id="female" 
                                         onChange={handleCheck}
                                         />
                                         <span className="err">{err.gender}</span>
@@ -256,24 +259,24 @@ function Join() {
                                         <label htmlFor="benches">BANCHES</label>
                                         <input 
                                         type="checkbox" 
-                                        name="banches" 
-                                        id="interests"
+                                        id="banches" 
+                                        name="interests"
                                         onChange={handleCheck}
                                         />
 
                                         <label htmlFor="tables">TABLES</label>
                                         <input 
                                         type="checkbox" 
-                                        name="tables" 
-                                        id="interests"
+                                        id="tables" 
+                                        name="interests"
                                         onChange={handleCheck}
                                         />
 
                                         <label htmlFor="beds">BEDS</label>
                                         <input 
                                         type="checkbox" 
-                                        name="beds" 
-                                        id="interests"
+                                        id="beds" 
+                                        name="interests"
                                         onChange={handleCheck}
                                         />
 
@@ -292,8 +295,23 @@ function Join() {
                     </fieldset>
                 </form>
             </div>
+            {success ? <Pop /> : null} 
         </div>
     )
+
+    function Pop() {
+        return(
+            <aside className="pop">
+                <h1>회원가입을 축하드립니다!</h1>
+                <div className="pic">
+                    <FontAwesomeIcon icon={faHandsClapping} />
+                </div>
+                <button className="close" onClick={e => {
+                    setSuccess(false);
+                }}>CHECK</button>
+            </aside>
+        )
+    }
 }
 
 export default Join;

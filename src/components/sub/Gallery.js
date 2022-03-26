@@ -1,6 +1,10 @@
 import axios from "axios";
 import {useEffect , useRef, useState} from "react";
 import Masonry from "react-masonry-component";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPagelines } from "@fortawesome/free-brands-svg-icons";
+
+
 
 const body = document.querySelector("body");
 
@@ -19,26 +23,28 @@ function Gallery() {
     const pop = useRef(null);
     const topLeft = useRef(null);
 
-    const path = process.env.PUBLIC_URL;
-    const titPic = `${path}/img/titPic.png`;
-
     let [items,setItems] = useState([]);
+    let [loading, setLoading] = useState(true);
     let [isPop,setIsPop] = useState(false);
     let [index,setIndex] = useState(0);
-    
+    let [interest,setInterest] = useState(true);
+    let [tree,setTree] = useState(true);
+    let [sunset,setSunset] = useState(true);
 
-    const api_key = "7bc9dd83db29619be503141072e9b905";
-    const url = `https://www.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=${api_key}&per_page=21&format=json&nojsoncallback=1`;
-    const list = useRef(null);
+    let list = useRef(null);
+    let input = useRef(null);
 
-    useEffect(() => {
-        axios
-        .get(url)
-        .then(json => {
-            console.log(json.data.photos.photo);
-            setItems(json.data.photos.photo);
-        })
-    },[url])
+    useEffect(() =>{
+        setLoading(true);
+        setInterest(false);
+        setTree(true);
+        setSunset(false);
+
+        getFlickr({
+            type : "tree",
+            count : 15
+        });
+    },[]);
 
     return(
         <section  className="gallery">
@@ -55,14 +61,114 @@ function Gallery() {
                 <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, doloribus!</span>
             </div>
             <div className="inner">
-                <h1><a href="#">Gallery</a></h1>
-                <span>We're so happy you have landed here! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, mollitia.</span>                
-                <div className="line"></div>
-                <div className="line2"></div>
-                <div className="titPic">
-                        <img src={titPic} />
+                <h1>Our Gallery</h1>
+
+                <div className="boxes">
+                    <div className="titPic">
+                        <FontAwesomeIcon icon={faPagelines} />
+                    </div>
+                    <div className="tagBox">
+                        <div className="inner">
+                            <button  onClick={e => {
+                                if(!interest) {
+                                    list.current.classList.remove("on");
+                                    setLoading(true);
+                                    setInterest(true);
+                                    setTree(false);
+                                    setSunset(false);
+                                    btnActive(e.target);
+                                    getFlickr({
+                                        type : "interest",
+                                        count : 15
+                                    })
+                                }
+                                
+                            }}>INTEREST</button>
+                            <button className="on" onClick={e => {
+                                if(!tree){
+                                    list.current.classList.remove("on");
+                                    setLoading(true);
+                                    btnActive(e.target);
+                                    setInterest(false);
+                                    setTree(true);
+                                    setSunset(false);
+                                    getFlickr({
+                                        type : "tree",
+                                        count : 15
+                                    })
+
+                                }
+                            }}>TREE</button>
+                            <button onClick={e => {
+                                if(!sunset) {
+                                    list.current.classList.remove("on");
+                                    setLoading(true);
+                                    btnActive(e.target);
+                                    setInterest(false);
+                                    setTree(false);
+                                    setSunset(true);
+                                    getFlickr({
+                                        type : "sunset",
+                                        count : 15
+                                    })
+                                }
+                            }}>SUNSET</button>
+                        </div>
+                    </div>
+                    <div className="searchBox">
+                        <input type="text" ref={input} onKeyPress={e => {
+                            if(e.key !== "Enter") return;
+
+                            list.current.classList.remove("on");
+                            setLoading(true);
+                            
+                            const tags = input.current.value;
+                            input.current.value = "";
+
+                            getFlickr({
+                                type : "search",
+                                count : 15,
+                                tags : tags
+                            });
+                        }
+                    
+                        } />
+                        <button
+                            onClick={() => {
+                                const tags = input.current.value;
+                                if(tags === "") return;
+
+                                list.current.classList.remove("on");
+                                setLoading(true);
+
+                                input.current.value = "";
+
+                                getFlickr({
+                                    type : "search",
+                                    count : 15,
+                                    tags : tags
+                                });
+                            }}
+                            >SEARCH</button>
+                    </div>
                 </div>
 
+                {(
+                    loading 
+                    ? 
+                    <div class="load">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="shadow"></div>
+                        <div class="shadow"></div>
+                        <div class="shadow"></div>
+                        <span>Loading</span>
+                    </div>
+                    : 
+                    ""
+                )}
+                
                 <div className="list" ref={list}>
                     <Masonry 
                         className={"frame"}
@@ -98,6 +204,61 @@ function Gallery() {
             {isPop ? <Pop /> : null}
         </section>
     )
+
+    async function getFlickr(opt) {
+
+        let url = "";
+
+        const baseURL = "https://www.flickr.com/services/rest/?";
+        const method1 = "flickr.interestingness.getList";
+        const method2 = "flickr.photos.search";
+        const method3 = "flickr.galleries.getPhotos";
+        const method4 = "flickr.galleries.getPhotos";
+        const key  = "7bc9dd83db29619be503141072e9b905";
+        const count = opt.count;
+
+
+        if(opt.type === "interest") {
+             url = `${baseURL}method=${method1}&api_key=${key}&per_page=${count}&format=json&nojsoncallback=1`;
+        }
+        else if(opt.type === "tree") {
+            let galleryId = "72157720445868717";
+            url = `${baseURL}method=${method3}&api_key=${key}&per_page=${count}&format=json&nojsoncallback=1&privacy_filter=1&gallery_id=${galleryId}`;
+        }
+        else if(opt.type === "sunset") {
+            let galleryId = "72157720487993310";
+            url = `${baseURL}method=${method4}&api_key=${key}&per_page=${count}&format=json&nojsoncallback=1&privacy_filter=1&gallery_id=${galleryId}`;
+
+        }
+        else if(opt.type === "search") {
+             url = 
+            `${baseURL}method=${method2}&api_key=${key}&per_page=${count}&format=json&nojsoncallback=1&tags=${opt.tags}`;
+        }else {
+            console.error("api요청 타입을 interest, tree, sunset, search 중에서 지정하세요.")
+        }
+
+        await axios
+            .get(url)
+            .then(json => {
+                console.log(json.data.photos);
+                setItems(json.data.photos.photo);
+            });
+
+        setTimeout(() => {
+            list.current.classList.add("on");
+            setLoading(false);
+        },2000);
+    }
+
+    function btnActive(btn) {
+        const galleryBtn = document.querySelectorAll(".gallery .inner .boxes .tagBox .inner button");
+
+        for(let btn of galleryBtn) {
+            btn.classList.remove("on");
+        }
+        btn.classList.add("on");
+    }
+
     function Pop() {
         const imgSrc = `https://live.staticflickr.com/${items[index].server}/${items[index].id}_${items[index].secret}_b.jpg`;
 
@@ -124,7 +285,4 @@ function Gallery() {
 }
 
 export default Gallery;
-
-// 어떤 이벤트가 발생했을 때 handle"이벤트명" 으로 작성하는게 일반적이다.
-// 예를 들어 handleResize나 handleChange등
 
