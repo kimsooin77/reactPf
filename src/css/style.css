@@ -329,7 +329,7 @@ header {
           color: #fff;
           position: relative; }
           header > .inner #popup .inner .content h1 {
-            margin: 10px 0 20px;
+            margin: 10px 0 30px;
             font: bold 25px/1 "Baloo 2";
             text-align: center;
             letter-spacing: 1px;
@@ -346,7 +346,8 @@ header {
             font: normal 15px/1.5 "Baloo 2";
             width: 97%;
             margin: 0 auto;
-            text-align: center; }
+            text-align: center;
+            display: block; }
           header > .inner #popup .inner .content .closeBtn {
             position: absolute;
             top: 20px;
@@ -674,31 +675,31 @@ footer {
       z-index: 11; }
     header > .inner .no {
       right: 0%; } }
-#second {
+#visual {
   display: block;
   padding-bottom: 30px;
   width: 100%;
   background-color: #f3f2ed; }
-  #second .inner {
+  #visual .inner {
     width: 1200px;
     margin: 0 auto; }
-    #second .inner .wrap {
+    #visual .inner .wrap {
       width: 100%;
       position: relative; }
-      #second .inner .wrap h2 {
+      #visual .inner .wrap h2 {
         width: 50%;
         padding-top: 80px;
         color: #585b49;
         font: bold 45px/1.5 "Noto Serif Display";
         text-align: left; }
-      #second .inner .wrap .line {
+      #visual .inner .wrap .line {
         position: absolute;
         left: 599px;
         top: 77px;
         width: 1px;
         height: 196px;
         background-color: #585b49; }
-      #second .inner .wrap .pic {
+      #visual .inner .wrap .pic {
         position: absolute;
         z-index: 2;
         background-color: #f3f2ed;
@@ -706,11 +707,11 @@ footer {
         top: 143px;
         width: 48px;
         height: 71px; }
-        #second .inner .wrap .pic img {
+        #visual .inner .wrap .pic img {
           width: 92px;
           height: 39px;
           transform: translateY(7px); }
-      #second .inner .wrap p {
+      #visual .inner .wrap p {
         margin-left: auto;
         margin-top: -180px;
         width: 507px;
@@ -719,7 +720,7 @@ footer {
         font: normal 14px/2.3 "arial";
         letter-spacing: 1px;
         text-align: left; }
-      #second .inner .wrap a {
+      #visual .inner .wrap a {
         display: block;
         margin: 50px auto;
         transform: translateX(205px);
@@ -732,110 +733,108 @@ footer {
         text-align: center;
         font: 12px/41px "arial";
         transition: 0.5s; }
-        #second .inner .wrap a:hover {
+        #visual .inner .wrap a:hover {
           background-color: #b3a395;
           border: #b3a395; }
 
 @media screen and (max-width: 1179px) {
-  #second {
+  #visual {
     display: block;
     width: 100%;
     background-color: #f3f2ed; }
-    #second .inner {
+    #visual .inner {
       width: 900px;
       position: relative;
       margin: 0 auto; }
-      #second .inner .wrap {
+      #visual .inner .wrap {
         width: 100%;
         position: relative; }
-        #second .inner .wrap h2 {
+        #visual .inner .wrap h2 {
           width: 100%;
           text-align: center;
           margin: 0 auto; }
-        #second .inner .wrap .line {
+        #visual .inner .wrap .line {
           position: relative;
           left: auto;
           top: auto;
           width: 450px;
           height: 1px;
           margin: 50px auto; }
-        #second .inner .wrap .pic {
+        #visual .inner .wrap .pic {
           left: 387px;
           top: 219px;
           width: 130px;
           display: flex;
           align-items: center;
           justify-content: center; }
-          #second .inner .wrap .pic img {
-            width: 92px;
-            height: 39px;
+          #visual .inner .wrap .pic img {
+            width: 101px;
+            height: 35px;
             transform: translateY(7px); }
-        #second .inner .wrap p {
+        #visual .inner .wrap p {
           margin: 0 auto;
-          margin-left: none;
-          margin-top: none;
           width: 80%;
           text-align: center; }
-        #second .inner .wrap a {
+        #visual .inner .wrap a {
           transform: translateX(0px); } }
 @media screen and (max-width: 900px) {
-  #second {
+  #visual {
     display: block;
     width: 100%;
     background-color: #f3f2ed; }
-    #second .inner {
+    #visual .inner {
       width: 500px;
       position: relative;
       margin: 0 auto; }
-      #second .inner .wrap {
+      #visual .inner .wrap {
         width: 100%;
         position: relative; }
-        #second .inner .wrap h2 {
+        #visual .inner .wrap h2 {
           width: 90%;
           font: bold 35px/1.5 "Noto Serif Display"; }
-        #second .inner .wrap .line {
+        #visual .inner .wrap .line {
           width: 90%; }
-        #second .inner .wrap .pic {
+        #visual .inner .wrap .pic {
           left: 175px;
           top: 242px; }
-        #second .inner .wrap p {
+        #visual .inner .wrap p {
           width: 70%; } }
-#third {
+#info {
   width: 100%;
   margin: 0 auto;
   padding-bottom: 10px;
   background-color: #f3f2ed; }
-  #third .inner {
+  #info .inner {
     width: 100%;
     position: relative; }
-    #third .inner .slider {
+    #info .inner .slider {
       width: 100%;
       padding-top: 50px; }
-      #third .inner .slider .swiper {
+      #info .inner .slider .swiper {
         width: 100%;
         height: 600px;
         overflow: hidden; }
-        #third .inner .slider .swiper .swiper-button-prev {
+        #info .inner .slider .swiper .swiper-button-prev {
           bottom: 0%;
           color: #b28257;
           left: 61px;
           top: auto; }
-        #third .inner .slider .swiper .swiper-button-next {
+        #info .inner .slider .swiper .swiper-button-next {
           bottom: 0%;
           color: #b28257;
           right: 61px;
           top: auto; }
-        #third .inner .slider .swiper .swiper-slide {
+        #info .inner .slider .swiper .swiper-slide {
           width: 33.33%;
           height: 90%;
           margin: 0 30px; }
-          #third .inner .slider .swiper .swiper-slide .pic {
+          #info .inner .slider .swiper .swiper-slide .pic {
             width: 100%;
             height: 480px; }
-            #third .inner .slider .swiper .swiper-slide .pic img {
+            #info .inner .slider .swiper .swiper-slide .pic img {
               width: 100%;
               height: 100%; }
-    #third .inner > h1 {
+    #info .inner > h1 {
       display: block;
       margin: 0 auto;
       width: 90%;
@@ -844,20 +843,20 @@ footer {
       font: bold 45px/1.5 "Noto Serif Display";
       text-align: center;
       letter-spacing: 1px; }
-    #third .inner .line1
-    , #third .inner .line2 {
+    #info .inner .line1
+    , #info .inner .line2 {
       width: 719px;
       margin: 50px auto 0; }
-    #third .inner .line1 {
+    #info .inner .line1 {
       height: 1.5px;
       top: 893px;
       background-color: #585b49; }
-    #third .inner .line2 {
+    #info .inner .line2 {
       height: 1px;
       margin-top: 10px;
       top: 902px;
       background-color: #585b49; }
-    #third .inner p {
+    #info .inner p {
       width: 100%;
       margin: 50px auto;
       text-align: center;
@@ -866,42 +865,42 @@ footer {
       letter-spacing: 0.5px; }
 
 @media screen and (max-width: 960px) {
-  #third {
+  #info {
     width: 100%;
     padding-bottom: 10px;
     margin: 0 auto;
     background-color: #f3f2ed; }
-    #third .inner {
+    #info .inner {
       width: 100%;
       position: relative; }
-      #third .inner .slider {
+      #info .inner .slider {
         padding-top: 50px; }
-        #third .inner .slider .swiper {
+        #info .inner .slider .swiper {
           width: 100%;
           height: 600px;
           overflow: hidden; }
-          #third .inner .slider .swiper .swiper-button-prev {
+          #info .inner .slider .swiper .swiper-button-prev {
             bottom: 4%;
             left: 41px; }
-          #third .inner .slider .swiper .swiper-button-next {
+          #info .inner .slider .swiper .swiper-button-next {
             bottom: 4%;
             right: 41px; }
-          #third .inner .slider .swiper .swiper-slide {
+          #info .inner .slider .swiper .swiper-slide {
             width: 33.33%;
             height: 90%;
             margin: 0 30px; }
-            #third .inner .slider .swiper .swiper-slide .pic {
+            #info .inner .slider .swiper .swiper-slide .pic {
               width: 100%;
               height: 480px; }
-              #third .inner .slider .swiper .swiper-slide .pic img {
+              #info .inner .slider .swiper .swiper-slide .pic img {
                 width: 100%;
                 height: 100%; }
-      #third .inner > h1 {
+      #info .inner > h1 {
         font: bold 35px/1.5 "Noto Serif Display"; }
-      #third .inner .line1
-      , #third .inner .line2 {
+      #info .inner .line1
+      , #info .inner .line2 {
         width: 90%; }
-      #third .inner p {
+      #info .inner p {
         width: 90%; } }
 #commend {
   padding: 20px 0;
