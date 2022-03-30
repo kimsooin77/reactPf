@@ -34,7 +34,10 @@ function Department() {
 
     const handleMotion = (number) => {
         setisClicked(false)
-        handleBtn();
+        const btns = dots.current.querySelectorAll("li")
+
+        for(let btn of btns) btn.classList.remove("on")
+            btns[number].classList.add("on");
             
         if( number === 0) {
             setisClicked(true)
@@ -51,13 +54,6 @@ function Department() {
         if(number === 4) {
             setisClicked(true)
         }
-        
-    }
-    const handleBtn = () => {
-        const btns = dots.current.querySelectorAll("li")
-
-        for(let btn of btns) btn.classList.remove("on")
-            btns[number].classList.add("on");
     }
 
     useEffect(() => {
