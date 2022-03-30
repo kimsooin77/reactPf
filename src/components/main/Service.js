@@ -1,11 +1,11 @@
-function Sevice() {
+function Service() {
     const path = process.env.PUBLIC_URL;
     const servicePic1 = `${path}/img/servicePic1.png`;
     const servicePic2 = `${path}/img/servicePic2.png`;
     const servicePic3 = `${path}/img/servicePic3.png`;
 
     return(
-        <div id="service">
+        <section id="service">
             <div className="inner">
                 <h1>OUR SERVICES</h1>
                 <span>HOW IT WORKS</span>
@@ -37,8 +37,8 @@ function Sevice() {
                     </div>
                 </article>
             </div>
-        </div>
+        </section>
     )
 }
 
-export default Sevice;
+export default Service;

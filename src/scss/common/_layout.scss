@@ -141,7 +141,7 @@ header {
             padding: 50px 13px 20px; color: #fff; position: relative;
   
             h1 {
-              margin:10px 0 20px; font: bold 25px/1 "Baloo 2"; text-align: center;
+              margin:10px 0 30px; font: bold 25px/1 "Baloo 2"; text-align: center;
               letter-spacing: 1px; position: relative;
   
               &::after {
@@ -151,7 +151,7 @@ header {
             }
             span {
               font: normal 15px/1.5 "Baloo 2"; width: 97%; margin: 0 auto;
-              text-align: center;
+              text-align: center; display: block;
             } 
             .closeBtn {
               position: absolute; top: 20px; right: 20px; cursor: pointer;

@@ -20,13 +20,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
-/*
-
-export const setYoutube = data => {
-  return {
-    type : 'SET_YOUBUE',
-    payload : data
-  }
-}
- */

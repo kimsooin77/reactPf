@@ -1,6 +1,6 @@
 function Book() {
     return(
-        <div id="book">
+        <section id="book">
             <div className="inner">
                 <div className="wrap">
                     <p>READY TO STARTED?</p>
@@ -8,7 +8,7 @@ function Book() {
                     <a href="#">SEND US AN INQUIRY</a>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

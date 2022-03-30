@@ -20,7 +20,6 @@ function Commu() {
     }
 
     const [posts] = useState(getLocalItems);
-    const [count, setCount] = useState(0);
 
     useEffect(() => {
         localStorage.setItem("posts", JSON.stringify(posts));

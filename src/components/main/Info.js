@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import { Autoplay, EffectCoverflow, Navigation} from "swiper";
 import "swiper/css/navigation";
@@ -12,7 +12,7 @@ function Info(){
   
 
     return (
-      <section id="third">
+      <section id="info">
         <div className="inner">
           <div className="slider">
             <Swiper

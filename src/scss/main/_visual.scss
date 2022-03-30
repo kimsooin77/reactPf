@@ -1,4 +1,4 @@
-#second {
+#visual {
   display: block; padding-bottom: 30px;
   width:100%; background-color: rgba(243,242,237,1);
 
@@ -53,7 +53,7 @@
 
   
 @media screen and (max-width: 1179px){
-  #second {
+  #visual {
     display: block; 
     width:100%; background-color: rgba(243,242,237,1);
     .inner {
@@ -72,11 +72,11 @@
         .pic {
           left: 387px; top: 219px; width: 130px; display: flex; align-items: center; justify-content: center;
           img {
-            width: 92px; height: 39px; transform: translateY(7px);
+            width: 101px; height: 35px; transform: translateY(7px);
           }
         }
         p {
-          margin: 0 auto; margin-left:none; margin-top: none;
+          margin: 0 auto; 
           width: 80%; text-align: center;
         }
         a {  transform: translateX(0px); }
@@ -86,7 +86,7 @@
 }
 
 @media screen and (max-width: 900px){
-  #second {
+  #visual {
     display: block; 
     width:100%; background-color: rgba(243,242,237,1);
     .inner {
