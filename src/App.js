@@ -22,9 +22,6 @@ import Department from './components/sub/Department.js';
 import Location from './components/sub/Location.js';
 
 
-import { useEffect, useRef } from 'react';
-
-
 function App() {
  
   return (
