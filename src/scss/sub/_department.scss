@@ -3,8 +3,8 @@
     padding-bottom: 100px;
     .topPic {
         background: url(/public/img/slider1.jpg) bottom; width: 100%;
-        height: 60vh; background-repeat: no-repeat; background-attachment: fixed;
-        background-size: cover; z-index: -1;
+        height: 450px;; background-repeat: no-repeat; background-attachment: fixed;
+        background-size: cover; position: relative;
         
             p {
                 position: absolute; font: bold 60px/1.8 "DM Serif Display"; letter-spacing: 3px;
@@ -253,24 +253,15 @@
     #department {
         width: 100%; background-color: rgba(243,242,237,1);
         .topPic {
-            background: url(/public/img/slider1.jpg) bottom; width: 100%;
-            height: 60vh; background-repeat: no-repeat; background-attachment: fixed;
-            background-size: cover; z-index: -1;
-            
-                p {
-                    position: absolute; font: bold 60px/1.8 "DM Serif Display"; letter-spacing: 3px;
-                    color: #fff; top: 40%; left: 60px; transform: translateY(-50%);
-                    
-                }
-                span {
-                    position: absolute; font: normal 25px "Cardo";
-                    color: #FFF;top: 47%; left: 60px;
-                }
-    
-                aside{
-                    display: none;
-                }
-            
+            p {
+                width: 100%; position: relative; margin: 0 auto; text-align: center; 
+                color: #fff; top: 36%; left: 50%; transform: translate(-50%,-50%);
+            }
+            span {
+                display: block; width: 50%; margin: 0 auto; text-align: center; 
+                top: 45%; left: 50%; transform: translateX(-50%);
+            }
+            aside{ display: none; }
         }
         .inner {
             width: 600px;

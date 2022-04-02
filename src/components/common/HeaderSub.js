@@ -36,12 +36,14 @@ function HeaderSub() {
                     <li><NavLink exact to="/youtube">Youtube</NavLink></li>
                     <li><NavLink exact to="/location">Location</NavLink></li>
                     <li><NavLink exact to="/join">Join</NavLink></li>
-                    <li><a href="#" onClick={e => {
-                        e.preventDefault();
-
-                        setIsShow(false);
-                    }}>X</a></li>
                 </ul>
+                <div id="closeBtn" className = {isShow ? "show" : "hide"} onClick={e => {
+                    e.preventDefault();
+
+                    setIsShow(false);}}
+                >
+                X
+                </div>
             </div>
         </div>
     )

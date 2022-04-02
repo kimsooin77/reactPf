@@ -1,11 +1,11 @@
 #join{
-    width: 100%; height: 1280px;
+    width: 100%; 
     background-color: rgba(243,242,237,1);
 
     .topPic {
         background: url(/public/img/slider7.jpg) bottom; width: 100%;
-        height: 60vh; background-repeat: no-repeat; background-attachment: fixed;
-        background-size: cover;
+        height: 450px; background-repeat: no-repeat; background-attachment: fixed;
+        background-size: cover; position: relative;
 
         p {
             position: absolute; font: bold 60px/1.8 "DM Serif Display"; letter-spacing: 3px;
@@ -179,46 +179,25 @@
 
 @media screen and (max-width: 1179px){
     #join{
-        width: 100%; height: 1630px;
+        width: 100%; 
     
         .topPic {
-            span { 
-              width: 65%; left: 50%; transform: translateX(-50%);
-              text-align: center; display: block;
+            p {
+                width: 100%; position: relative; margin: 0 auto; text-align: center; 
+                color: #fff; top: 36%; left: 50%; transform: translate(-50%,-50%);
             }
-        
-            aside{
-                width: 700px; height: 160px; position: absolute; top: 40%; left: 50%; transform: translateX(-50%);
-                overflow: hidden; z-index: 3;
-        
-                .top {
-                    width: 33%;  height: 1px; background: #fff;
-                    position: absolute; top: 0; right: 0px;
-                }
-                .right {
-                    width: 1px; height: 100%; background: #fff;
-                    position: absolute; top: 0; right: 0;
-                }
-                .bottom {
-                    width: 100%; height: 1px; background: #fff;
-                    position: absolute; bottom: 0; right: 0;
-                }
-                .left {
-                    width: 1px; height: 100%; background: #fff;
-                    position: absolute; bottom: 0; left: 0;
-                }
-                .topLeft {
-                    width: 33%;
-                    height: 1px; background: #fff; position: absolute; top: 0; left: 0;
-                }
+            span {
+                display: block; width: 50%; margin: 0 auto; text-align: center; 
+                top: 45%; left: 50%; transform: translateX(-50%);
             }
+            aside{ display: none; }
         }
     
         .inner {
-            width: 800px; margin: 100px auto; position: relative;
+            width: 100%; margin: 0px auto; position: relative; padding: 150px 0 50px; overflow: hidden;
     
             .pic {
-                position: absolute; left: 603px; top: 230px;
+                position: absolute; left: 403px; top: 230px;
                 width: 1612px; height: 668px; opacity: 0.05;
                 background-image: url(/public/img/began_bg.png);
                 background-size: cover; background-repeat: no-repeat;
@@ -259,25 +238,12 @@
     }
 }
 
-@media screen and (max-width : 780px) {
+@media screen and (max-width : 960px) {
     #join{
-        width: 100%; height: 1850px;
-    
-        .topPic {
-            
-    
-            p {
-                position: relative; margin: 0 auto; text-align: center; padding-top: 107px;
-                color: #fff; top: auto; left: auto; transform: translateX(0%);
-                
-            }
-
-        
-            aside{ display: none; }
-          }
+        width: 100%; padding-bottom: 10px;
     
         .inner {
-            width: 450px; margin: 100px auto; position: relative;
+            width: 450px; margin: 40px auto 0; position: relative; padding: 150px 0 0;
             form {
                 table {
                     td {

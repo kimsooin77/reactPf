@@ -61,16 +61,12 @@ function Header(){
               <li><NavLink exact to="/location">Location</NavLink></li>
               <li><NavLink exact to="/join">Join</NavLink></li>
             </ul>
-            <div className='menuBtn' onClick={ () => {
-              setIsShow(true)
-            }
-
-            }>
-              <span>메뉴 호출</span>
-            </div>
+            
           </div>
           
-        
+          <div className='menuBtn' onClick={ () => setIsShow(true)}>
+              <span>메뉴 호출</span>
+          </div>
           <ul id="gnbMo" ref={gnbMo} className={isShow ? "yes" : "no"} >
               <li><NavLink exact to="/" ><img src={logoPic}  /><span></span></NavLink></li>
               <li><NavLink exact to="/department">Department</NavLink></li>

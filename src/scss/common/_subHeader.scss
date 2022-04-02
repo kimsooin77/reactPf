@@ -47,17 +47,15 @@
                 }
 
             }
-
-            
         }
 
         #gnbMo {
             width: 100%; height: 100vh;  position: absolute; top: 0px; text-align: center; right: -100%;
-            display: block; z-index: 10;
+            display: none; z-index: 10;
             li {
               width: 100%; height: calc(100vh / 7); background-color:#b2b2a2;
               transition: 0.5s;
-              a {
+              >a {
                 font: normal 20px/calc(100vh / 7) "Baloo 2"; color: #fff;
               }
     
@@ -73,23 +71,21 @@
     
                 &:nth-of-type(1) {background-color:#b2b2a2;}
               }
-    
-              &:nth-of-type(8) {
-                width: 20px; height: 20px; padding: 0;  position: absolute; top: 10px; right: 40px;
-                 a {
-                    color: #fff; cursor: pointer; 
-                 }
-                 &:hover {background-color: #b2b2a2;}
-              }
             }
             &.show {
-              right: 0%;
+              right: 0%; display: block;
             }
             &.hide {
-              right: -100%;
+              right: -100%; display: none;
             }
           }
+        #closeBtn {
+            width: 20px; height: 20px; padding: 0;  position: absolute; top: 50px; right: 35px;
+            color: #fff; cursor: pointer; font-size: 20px; z-index: 10;
 
+            &.show { display: block; }
+            &.hide {  display: none;  }
+        }
     }
 }
 

@@ -6,10 +6,13 @@ function Visual(){
         <div className="inner">
           <div className="wrap">
             <h2>Handmade Authentic<br />Wood Furniture & Home Decor</h2>
-            <div className="line"></div>
-            <div className="pic">
-              <img alt="secondPagePic" src={secondPagePic}  />
+            <div className="lineAndPic">
+              <div className="line"></div>
+              <div className="pic">
+                <img alt="secondPagePic" src={secondPagePic}  />
+              </div>
             </div>
+            
             <p>At Big Wood, our mission is to create curated, beautifully handcrafted,<br />authentic wood furniture and home decor that is both affordable and<br />accessible to our customers. All of our pieces ar made in the USA.</p>
             <a href="#">SEND US AN INQUIRY</a>
           </div>
