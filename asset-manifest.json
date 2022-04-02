@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/reactPf/static/css/main.8c9f6e72.css",
-    "main.js": "/reactPf/static/js/main.f8a8409a.js",
+    "main.css": "/reactPf/static/css/main.04876508.css",
+    "main.js": "/reactPf/static/js/main.13ca39f0.js",
     "static/media/began_bg.png": "/reactPf/static/media/began_bg.ded9bd735234cef88796.png",
     "static/media/bookBg.jpg": "/reactPf/static/media/bookBg.8bbcaf8ef7b016c6dc95.jpg",
     "static/media/middleBg.jpg": "/reactPf/static/media/middleBg.f3948ea136230831d84c.jpg",
@@ -12,11 +12,11 @@
     "static/media/slider6.jpg": "/reactPf/static/media/slider6.50df9ed766a96f1a4426.jpg",
     "static/media/slider4.jpg": "/reactPf/static/media/slider4.72675acf4a76e2c49300.jpg",
     "index.html": "/reactPf/index.html",
-    "main.8c9f6e72.css.map": "/reactPf/static/css/main.8c9f6e72.css.map",
-    "main.f8a8409a.js.map": "/reactPf/static/js/main.f8a8409a.js.map"
+    "main.04876508.css.map": "/reactPf/static/css/main.04876508.css.map",
+    "main.13ca39f0.js.map": "/reactPf/static/js/main.13ca39f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c9f6e72.css",
-    "static/js/main.f8a8409a.js"
+    "static/css/main.04876508.css",
+    "static/js/main.13ca39f0.js"
   ]
 }
