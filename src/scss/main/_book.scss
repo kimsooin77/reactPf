@@ -34,6 +34,16 @@
     }
 }
 
+@media screen and (max-width: 1179px){
+    #book {
+        .inner {
+            .wrap {
+                width: 100%;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 960px){
     #book {
         width: 100%; height: 500px; background-color: rgba(243,242,237,1);

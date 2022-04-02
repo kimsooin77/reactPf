@@ -6,7 +6,7 @@
     .topPic {
         background: url(/public/img/slider11.jpg) center; width: 100%;
         height: 450px; background-repeat: no-repeat; background-attachment: fixed;
-        background-size: cover;
+        background-size: cover; position: relative;
 
         p {
             position: absolute; font: bold 60px/1.8 "DM Serif Display"; letter-spacing: 3px;

@@ -1301,6 +1301,9 @@ footer {
           background-color: #585b49;
           border-color: #585b49; }
 
+@media screen and (max-width: 1179px) {
+  #book .inner .wrap {
+    width: 100%; } }
 @media screen and (max-width: 960px) {
   #book {
     width: 100%;
@@ -1666,7 +1669,8 @@ footer {
     height: 450px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover; }
+    background-size: cover;
+    position: relative; }
     .community .topPic p {
       position: absolute;
       font: bold 60px/1.8 "DM Serif Display";
