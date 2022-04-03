@@ -1,5 +1,5 @@
 #join{
-    width: 100%; 
+    width: 100%; padding-bottom: 20px;
     background-color: rgba(243,242,237,1);
 
     .topPic {
@@ -9,7 +9,7 @@
 
         p {
             position: absolute; font: bold 60px/1.8 "DM Serif Display"; letter-spacing: 3px;
-            color: #fff; top: 32%; left: 50%; transform: translateX(-50%);
+            color: #fff; top: 26%; left: 50%; transform: translateX(-50%);
             
         }
         span {
@@ -45,7 +45,7 @@
       }
 
     .inner {
-        width: 1200px; margin: 20px auto; position: relative;
+        width: 1200px; margin: 20px auto; position: relative; padding: 100px 0 0;
 
         .pic {
             position: absolute; left: 603px; top: 230px;
@@ -55,41 +55,40 @@
         }
         h2 {
             width: 311px; letter-spacing: 1px;
-            position: absolute; top: 105px; left: 146px; color: rgba(88,91,73,1);
+            margin-top: 50px; color: rgba(88,91,73,1);
             font: bold 40px/1.5 "Noto Serif Display"; text-align: left;
         }
         .p1{
-            position: absolute; top: 227px; left: 149px; margin-top: 20px;
-            width: 330px; font: normal 16px/1.8 "Baloo 2";
+            margin: 20px 0;
+            width: 40%; font: normal 16px/1.8 "Baloo 2"; 
             font-weight: 300; text-align: left; letter-spacing: 0.5px;
         }
         .icons {
+            
             .message
             ,.phone {
                 margin-top: 30px; color: #000; font: normal 14px "Baloo 2";
-                font-weight: 300; 
+                font-weight: 300; display: block; margin-bottom: 20px;
                 i{
                     font-size: 23px; transform: translateY(5px);
                     color: rgba(88,91,73,1); margin-right: 20px;
                 }
             }
-            .message{position: absolute; top: 328px; left: 149px; }
-            .phone {position: absolute; top: 376px; left: 149px; }
+            
             >span {
-                position: absolute; top: 470px; left: 146px;
+                display: block; margin-bottom: 20px;
                 width: 303px; font: normal 14px/1.2 "Baloo"; letter-spacing: 1px;
                 color: rgba(179,163,149,1); text-align: left;
             }
         }
         
         .p2 {
-            position: absolute; top: 513px; left: 148px;
-            width: 280px; font: normal 12px/1.8 "Baloo 2";
+            transform: translateY(20px); margin: 20px 0;
+            width: 40%; font: normal 14px/1.8 "Baloo 2";
             text-align: left; letter-spacing: 0.8px;
         }
         form {
-            width: 55%; position: absolute; right: 0;
-            top: 105px; 
+            width: 50%; margin-left: auto; margin-top: -438px; position: relative;
 
             table {
                 width: 100%;
@@ -211,12 +210,12 @@
                 width: 70%; margin: 20px auto; text-align: center;
             }
             .icons{
-                width: 70%; margin: 0 auto;
+                width: 73%; margin: 0 auto; display: flex; justify-content: space-between; padding-left: 20px;
                 .message
                 ,.phone {
                     margin-top: 20px; 
                 }
-                .message{position: relative; top: auto; left: auto; margin-right: 57px;}
+                .message{position: relative; top: auto; left: auto; margin-right: 0px;}
                 .phone {position: relative; top: auto; left: auto; }
                 >span {
                     position: relative; top: auto; left: auto;
@@ -264,6 +263,7 @@
                 font: bold 30px/1.5 "Noto Serif Display";
             }
             .icons{
+                display: block;
                 .phone {display: block;}
                 
             }
