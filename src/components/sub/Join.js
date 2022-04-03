@@ -294,8 +294,8 @@ function Join() {
                         </table>
                     </fieldset>
                 </form>
+                {success ? <Pop /> : null} 
             </div>
-            {success ? <Pop /> : null} 
         </div>
     )
 
@@ -303,7 +303,7 @@ function Join() {
         return(
             <aside className="pop">
                 <h1>회원가입을 축하드립니다!</h1>
-                <div className="pic">
+                <div className="clapPic">
                     <FontAwesomeIcon icon={faHandsClapping} />
                 </div>
                 <button className="close" onClick={e => {
