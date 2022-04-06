@@ -1,4 +1,4 @@
-# Big portfolio
+# Big Wood portfolio
 
 - react로 작성된 웹사이트입니다.
 - 메인페이지를 포함하여 department, community, gallery, youtube, location, join 총 7페이지로 구성되었습니다.
