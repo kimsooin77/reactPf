@@ -613,6 +613,33 @@ footer {
       z-index: 11; }
     header > .inner .no {
       right: 0%; }
+    header > .inner #popup .inner {
+      width: 80%;
+      height: 750px; }
+      header > .inner #popup .inner .content h1 {
+        font: bold 50px/1 "Baloo 2"; }
+        header > .inner #popup .inner .content h1::after {
+          width: 15%;
+          bottom: -18px;
+          left: 232px; }
+      header > .inner #popup .inner .content span {
+        font: normal 34px/1.5 "Baloo 2";
+        margin-top: 60px; }
+      header > .inner #popup .inner .content .closeBtn {
+        top: 56px;
+        right: 44px;
+        font: normal 30px/1 "Baloo 2"; }
+      header > .inner #popup .inner > .wrap input[type=checkbox] {
+        width: 30px;
+        height: 30px; }
+      header > .inner #popup .inner > .wrap label {
+        font: normal 34px/1 "Baloo 2"; }
+    header > .inner #popup.on {
+      opacity: 1;
+      z-index: 100; }
+    header > .inner #popup.off {
+      opacity: 0;
+      display: none; }
 
   footer {
     padding-bottom: 40px; }
